@@ -1,70 +1,52 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Тестове завдання для стажування Full stack JS
 
-## Available Scripts
 
-In the project directory, you can run:
+Завдання 1.  Два друга грають у гру, вони обидва загадують число. 
+Перший повинен перетворити одне число на інше за допомогою множення цього числа на 2 (10 * 2 = 20) або додаванням одиниці праворуч (10 + 1 = 101). 
 
-### `npm start`
+Потрібно написати програму, яка буде знаходити, чи можливо одне число перетворити на інше, використовуючи лише перераховані вище операції.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Завдання 2.   Масив "arr" довжиною n+1 містить натуральні числа від 1 до n. Знайдіть будь-який елемент, що повторюється в масиві за оптимальний час (O(n)) не змінюючи вихідний масив і не використовуючи додаткову пам'ять.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Завдання 3.
+3.1  
+На змаганнях з паверліфтингу використовуються дискові навантажувачі вагою 0.5, 1, 2.5, 5, 10, 15, 20 та 25 кг. 
+Також ми маємо американські дискові навантажувачі вагу яких визначено у lbs. Такі  дискові навантажувачі є тільки в 10, 25, 35, 45 фунтів. 
+Гриф на штанзі завжди один і дорівнює 20кг. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Потрібно знайти таку комбінацію дисковихі навантажувачів, щоб вага на штанзі була мінімальною, але перевищувала максимальний рекорд. Наприклад, Спортсмен номер 1 підняв 101 кг використовуючи гриф 20кг, 4 дискових навантажувачі по 20 кг та два по 0.5. 
+Для того щоб перевершити вагу попереднього спортсмена, Спортсмену номер 2 буде оптимально підняти 101.44 які можна отримати з грифу 20 кг і двох дискових навантажувачів наступних найменувань  1, 2.5, 10, кг та 25, 35 lbs.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Треба написати програму, яка за заданою вагою буде знаходити мінімальний наступний.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+! Важливо, що  дискові навантажувачі будь-якої ваги вішаються на штангу попарно. Так само на штанзі може бути не більше 24 дискових  навантажувачі, тобто максимум 12 з кожного боку.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3.2
+Для цих змагань менеджер замовив певну кількість футболок різних розмірів. Усього надруковано футболки шести розмірів: S, M, L, XL, XXL, XXXL. Для кожного розміру відома кількість футболок.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Під час реєстрації організатори попросили кожного із n учасників вказати розмір футболки. Учасник міг обрати 2 розміри, наприклад, M і L - це означає, що йому може підійти будь-яка з цих футболок. Якщо учасник обирає 2 розміри, вони обов'язково повинні бути сусідніми. Це не може бути S та XXL.
 
-## Learn More
+Напишіть програму, яка визначить, чи можливо з футболок, які ми маємо, зробити подарунок усім спортсменам. Кожному учаснику має дістатись футболка його розміру:
+необхідного розміру, якщо вказано один розмір;
+будь-якого з двох розмірів, якщо вказано два сусідні розміри.
+Якщо це можливо, програма повинна вивести будь-яке з можливих рішень.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Завдання 4. 
+У театрі є прямокутна сцена розміром n* m. 
+Для розміщення акторів на сцені директор театру надав вам план, де вказано, де мають стояти актори, а де ні.
+На сцені встановлений прожектор, який може освітлювати в одному з чотирьох напрямків: ліворуч, вгору, вправо або донизу, якщо дивитися на сцену зверху. Таким чином, позиція прожектора визначається клітиною, в якій він встановлений, та напрямком, в якому він світить.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Вам необхідно обрати “хорошу позицію” для встановлення прожектора на сцені, за якої будуть виконуватися дві умови: у вибраній клітці не повинно бути актора, а в напрямку, куди світитиме прожектор, повинен бути хоча б один актор.
+Вам потрібно визначити кількість можливих “хороших позицій”, де можна встановити прожектор на сцені. Дві позиції вважаються різними, якщо вони відрізняються клітиною, де встановлений прожектор, або напрямком, в якому він світить.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Реалізація завдань 1-4: всі вхідні дані повинні передаватсь через один json файл. А відповідь має записуватися в інший json файл.

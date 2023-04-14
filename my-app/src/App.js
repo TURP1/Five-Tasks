@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-
+import HorizontalLine from './Components/General/HorizontalLine';
+import FirstTaskMath from './Components/Task1/Task1 mathContainer';
+import SecondTaskMath from './Components/Task2/Task2 mathContainer';
+import logo from './assets/logo.jpeg'
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img className='App-logo' src={logo} alt='logoTest'></img>
+        <p>Agile test task</p>
       </header>
+      <div>
+      <FirstTaskMath></FirstTaskMath>
+      <HorizontalLine></HorizontalLine>
+      <SecondTaskMath></SecondTaskMath>
+      </div>
     </div>
   );
 }
