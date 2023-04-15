@@ -14,8 +14,7 @@ function FirstTaskMath() {
         }
     }, [num1, num2]);
 
-    let taskOneMathFunction = (dataJSON) => {
-        let data = JSON.parse(dataJSON)
+    let taskOneMathFunction = (data) => {
         setNum1(+data.firstNumber);
         setNum2(+data.secondNumber);
         canTransform(num1, num2)

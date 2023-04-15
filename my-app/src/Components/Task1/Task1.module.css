@@ -9,7 +9,6 @@
 .person{
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
 }
 
 .queryGroup{
@@ -27,22 +26,7 @@
     border-radius: 10px;
     margin: 35px 35px 0 35px;
 }
-.submit{
-    text-align: center; 
-    padding-top: 7px;
-}
-.submit input{
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #f1f4f0;
-    font-weight: bolder;
-    
-}
-.submit input:hover{
-    background-color: rgb(251, 255, 240);
-    
-}
+
 .input{
     border: 2px solid black;
     border-radius: 10px;

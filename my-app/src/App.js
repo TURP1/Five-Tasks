@@ -2,6 +2,7 @@ import './App.css';
 import HorizontalLine from './Components/General/HorizontalLine';
 import FirstTaskMath from './Components/Task1/Task1 mathContainer';
 import SecondTaskMath from './Components/Task2/Task2 mathContainer';
+import ThirdTaskMath from './Components/Task3/Task3 mathContainer';
 import logo from './assets/logo.jpeg'
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <FirstTaskMath></FirstTaskMath>
       <HorizontalLine></HorizontalLine>
       <SecondTaskMath></SecondTaskMath>
+      <HorizontalLine></HorizontalLine>
+      <ThirdTaskMath></ThirdTaskMath>
       </div>
     </div>
   );

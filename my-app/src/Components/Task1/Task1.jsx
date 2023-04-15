@@ -9,22 +9,21 @@ function FirstTask({ taskOneMathFunction, answer, secondNumber }) {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        let dataJSON = JSON.stringify(data)
-        taskOneMathFunction(dataJSON)
+        taskOneMathFunction(data)
     }
 
     return (
         <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
             <div className="task">
-                        <p> Завдання 1.  Два друга грають у гру, вони обидва загадують число.
-                            Перший повинен перетворити одне число на інше за допомогою множення цього числа на 2 (10 * 2 = 20) або додаванням одиниці праворуч (10 + 1 = 101).
+                <p> Завдання 1.  Два друга грають у гру, вони обидва загадують число.
+                    Перший повинен перетворити одне число на інше за допомогою множення цього числа на 2 (10 * 2 = 20) або додаванням одиниці праворуч (10 + 1 = 101).
 
-                            Потрібно написати програму, яка буде знаходити, чи можливо одне число перетворити на інше, використовуючи лише перераховані вище операції.
-                        </p>
-                    </div>
+                    Потрібно написати програму, яка буде знаходити, чи можливо одне число перетворити на інше, використовуючи лише перераховані вище операції.
+                </p>
+            </div>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={style.container}>
-                   
+
                     <div className={style.person}>
                         <div className={style.queryGroup}>
                             <input className={style.input} type="number" placeholder="firstNumber" {...register("firstNumber", { required: true })} />
@@ -33,7 +32,7 @@ function FirstTask({ taskOneMathFunction, answer, secondNumber }) {
                         <div className={style.imageContainer}>
                             <img src={img1} alt="testImg1" />
                         </div>
-                        <div className={style.submit}>
+                        <div className="submit">
                             <input type="submit" />
                         </div>
 
