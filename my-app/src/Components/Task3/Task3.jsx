@@ -60,12 +60,35 @@ function ThirdTask({ chooseWeightArray, answer }) {
           </div>
           <div>
             <img className={style.mainImg} src={mainImg} alt="mainTest" />
-            <div className={style.barbelLeft}>
-              <WeightImageSideView src={lbs} kilogram={20.4} />
-              <WeightImageSideView src={kilogram} kilogram={25} />
+            <div className={style.leftPositioning}>
+              <div className={style.barbelLeft}>
+                <WeightImageSideView src={kilogram} kilogram={0.5} />
+                <WeightImageSideView src={kilogram} kilogram={1} />
+                <WeightImageSideView src={kilogram} kilogram={2.5} />
+                <WeightImageSideView src={lbs} kilogram={4.5} />
+                <WeightImageSideView src={kilogram} kilogram={5} />
+                <WeightImageSideView src={kilogram} kilogram={10} />
+                <WeightImageSideView src={lbs} kilogram={11.3} />
+                <WeightImageSideView src={kilogram} kilogram={15} />
+                <WeightImageSideView src={lbs} kilogram={15.9} />
+                <WeightImageSideView src={kilogram} kilogram={20} />
+                <WeightImageSideView src={lbs} kilogram={20.4} />
+                <WeightImageSideView src={kilogram} kilogram={25} />
+              </div>
             </div>
+
             <div className={style.rightPositioning}>
               <div className={style.barbelRight}>
+                <WeightImageSideView src={kilogram} kilogram={0.5} />
+                <WeightImageSideView src={kilogram} kilogram={1} />
+                <WeightImageSideView src={kilogram} kilogram={2.5} />
+                <WeightImageSideView src={lbs} kilogram={4.5} />
+                <WeightImageSideView src={kilogram} kilogram={5} />
+                <WeightImageSideView src={kilogram} kilogram={10} />
+                <WeightImageSideView src={lbs} kilogram={11.3} />
+                <WeightImageSideView src={kilogram} kilogram={15} />
+                <WeightImageSideView src={lbs} kilogram={15.9} />
+                <WeightImageSideView src={kilogram} kilogram={20} />
                 <WeightImageSideView src={lbs} kilogram={20.4} />
                 <WeightImageSideView src={kilogram} kilogram={25} />
               </div>

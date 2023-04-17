@@ -42,23 +42,24 @@
 .barbelLeft {
     display: flex;
     flex-direction: row-reverse;
-    align-items: center;
+    align-items: flex-start;
 }
 
-.rightPositioning {
+.leftPositioning {
     position: relative;
-    top: -420px;
+    bottom: 357px;
     left: -445px;
 }
 
 .barbelRight {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .rightPositioning {
     position: relative;
-    top: -545px;
+    bottom: 557px;
     left: 440px;
 }
+
