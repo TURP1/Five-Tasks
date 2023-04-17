@@ -1,45 +1,64 @@
-.capsule {
-    padding: 10px;
-    border: 2px solid black;
-    border-radius: 10px;
-}
-
-.input {
-    padding: 10px;
-    border: 2px solid black;
-    border-radius: 10px;
-
-}
-
-.input:focus {
-    border: 2px solid #f1f4f0;
-}
-.task2container{
+.task3container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 35px;
 }
-.queryContainer{
+
+.leftSide {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    text-align: center;
 }
-.arrayDisplayer{
+
+.mainImg {
+    height: 450px;
+}
+
+.weightShelfContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.weightContainer {
     display: flex;
     flex-direction: row;
-    padding: 5px;
-    border: 2px solid black;
-    border-radius: 10px;
-    gap: 5px;
 }
-.arrayContainer{
+
+.easyWeightImg {
+    width: 120px;
+}
+
+
+.middleWeightImg {
+    width: 150px;
+}
+
+.topWeightImg {
+    width: 200px;
+}
+
+.barbelLeft {
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    gap: 20px;
+    flex-direction: row-reverse;
+    align-items: center;
 }
-.duplicated{
-    border-color: red;
+
+.rightPositioning {
+    position: relative;
+    top: -420px;
+    left: -445px;
+}
+
+.barbelRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rightPositioning {
+    position: relative;
+    top: -545px;
+    left: 440px;
 }
