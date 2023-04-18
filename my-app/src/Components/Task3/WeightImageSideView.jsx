@@ -20,9 +20,9 @@ function WeightImageSideView({ src, kilogram }) {
     return (
         <img className={style.weight} src={src} style={{
             height: `${ weightHeight }px`,
-            width: '15px',
-            position: 'relative',
-            bottom: `${positionAdder}px`
+            width: '15px'
+            // position: 'relative',
+            // bottom: `${positionAdder}px`
         }
         }
             alt={`${kilogram} kg`} />

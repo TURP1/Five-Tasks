@@ -16,15 +16,7 @@ import thirtyFiveLb from '../../assets/task3/35lb.png'
 import fortyFiveFiveLb from '../../assets/task3/45lb.png'
 import WeightImage from './WeightImage'
 
-
-import kilogram from '../../assets/task3/p20.png'
-import lbs from '../../assets/task3/p45lb.png'
-
 import WeightImageSideView from './WeightImageSideView';
-
-
-
-
 
 
 
@@ -33,7 +25,7 @@ function handleClick(event) {
   console.log("Image clicked:", event.target);
 }
 
-function ThirdTask({ chooseWeightArray, answer }) {
+function ThirdTask({ addToWeightArray, answer, weightArray }) {
 
   const images = document.querySelectorAll("img");
 
@@ -41,6 +33,15 @@ function ThirdTask({ chooseWeightArray, answer }) {
   images.forEach(image => {
     image.addEventListener("click", handleClick);
   });
+  let mapWeightImage = ""
+  if (weightArray.length) {
+    mapWeightImage = weightArray.map(item => {
+      console.log(item);
+      return (
+        <WeightImageSideView key={item.kilogram} src={item.src} kilogram={item.kilogram} />
+      )
+    })
+  }
 
 
   return (
@@ -59,94 +60,73 @@ function ThirdTask({ chooseWeightArray, answer }) {
             {answer + " kg"}
           </div>
           <div>
-            <img className={style.mainImg} src={mainImg} alt="mainTest" />
-            <div className={style.leftPositioning}>
-              <div className={style.barbelLeft}>
-                <WeightImageSideView src={kilogram} kilogram={0.5} />
-                <WeightImageSideView src={kilogram} kilogram={1} />
-                <WeightImageSideView src={kilogram} kilogram={2.5} />
-                <WeightImageSideView src={lbs} kilogram={4.5} />
-                <WeightImageSideView src={kilogram} kilogram={5} />
-                <WeightImageSideView src={kilogram} kilogram={10} />
-                <WeightImageSideView src={lbs} kilogram={11.3} />
-                <WeightImageSideView src={kilogram} kilogram={15} />
-                <WeightImageSideView src={lbs} kilogram={15.9} />
-                <WeightImageSideView src={kilogram} kilogram={20} />
-                <WeightImageSideView src={lbs} kilogram={20.4} />
-                <WeightImageSideView src={kilogram} kilogram={25} />
+            <div className={style.positionContainer}>
+              <img className={style.mainImg} src={mainImg} alt="mainTest" />
+              <div className={style.leftPositioning}>
+                <div className={style.barbelLeft}>
+                  {mapWeightImage}
+                </div>
               </div>
-            </div>
-
-            <div className={style.rightPositioning}>
-              <div className={style.barbelRight}>
-                <WeightImageSideView src={kilogram} kilogram={0.5} />
-                <WeightImageSideView src={kilogram} kilogram={1} />
-                <WeightImageSideView src={kilogram} kilogram={2.5} />
-                <WeightImageSideView src={lbs} kilogram={4.5} />
-                <WeightImageSideView src={kilogram} kilogram={5} />
-                <WeightImageSideView src={kilogram} kilogram={10} />
-                <WeightImageSideView src={lbs} kilogram={11.3} />
-                <WeightImageSideView src={kilogram} kilogram={15} />
-                <WeightImageSideView src={lbs} kilogram={15.9} />
-                <WeightImageSideView src={kilogram} kilogram={20} />
-                <WeightImageSideView src={lbs} kilogram={20.4} />
-                <WeightImageSideView src={kilogram} kilogram={25} />
+              <div className={style.rightPositioning}>
+                <div className={style.barbelRight}>
+                  {mapWeightImage}
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
         <div className={style.weightShelfContainer}>
           <div className={style.weightContainer}>
-            <WeightImage chooseWeightArray={chooseWeightArray}
+            <WeightImage addToWeightArray={addToWeightArray}
               id='halfKilo' src={halfKilo} alt="0.5"
               className={style.easyWeightImg} >
             </WeightImage>
-            <WeightImage chooseWeightArray={chooseWeightArray}
+            <WeightImage addToWeightArray={addToWeightArray}
               id='kilo' src={kilo} alt="1"
               className={style.easyWeightImg} >
             </WeightImage>
-            <WeightImage chooseWeightArray={chooseWeightArray}
+            <WeightImage addToWeightArray={addToWeightArray}
               id='twoAndHalfKilo' src={twoAndHalfKilo} alt="2.5"
               className={style.easyWeightImg} >
             </WeightImage>
-            <WeightImage chooseWeightArray={chooseWeightArray}
+            <WeightImage addToWeightArray={addToWeightArray}
               id='tenLb' src={tenLb} alt="4.5"
               className={style.easyWeightImg} >
             </WeightImage>
-            <WeightImage chooseWeightArray={chooseWeightArray}
+            <WeightImage addToWeightArray={addToWeightArray}
               id='fiveKilo' src={fiveKilo} alt="5"
               className={style.easyWeightImg} >
             </WeightImage>
           </div>
           <div className={style.weightContainer}>
-            <WeightImage chooseWeightArray={chooseWeightArray}
+            <WeightImage addToWeightArray={addToWeightArray}
               id='tenKilo' src={tenKilo} alt="10"
               className={style.middleWeightImg} >
             </WeightImage>
-            <WeightImage chooseWeightArray={chooseWeightArray}
+            <WeightImage addToWeightArray={addToWeightArray}
               id='twentyFiveLb' src={twentyFiveLb} alt="11.3"
               className={style.middleWeightImg} >
             </WeightImage>
-            <WeightImage chooseWeightArray={chooseWeightArray}
+            <WeightImage addToWeightArray={addToWeightArray}
               id='fifteenKilo' src={fifteenKilo} alt="15"
               className={style.middleWeightImg} >
             </WeightImage>
-            <WeightImage chooseWeightArray={chooseWeightArray}
+            <WeightImage addToWeightArray={addToWeightArray}
               id='thirtyFiveLb' src={thirtyFiveLb} alt="15.9"
               className={style.middleWeightImg} >
             </WeightImage>
           </div>
           <div className={style.weightContainer}>
-            <WeightImage chooseWeightArray={chooseWeightArray}
+            <WeightImage addToWeightArray={addToWeightArray}
               id='twentyKilo' src={twentyKilo} alt="20"
               className={style.topWeightImg} >
             </WeightImage>
-            <WeightImage chooseWeightArray={chooseWeightArray}
+            <WeightImage addToWeightArray={addToWeightArray}
               id='fortyFiveFiveLb' src={fortyFiveFiveLb} alt="20.4"
               className={style.topWeightImg} >
             </WeightImage>
-            <WeightImage chooseWeightArray={chooseWeightArray}
+            <WeightImage addToWeightArray={addToWeightArray}
               id='twentyFiveKilo' src={twentyFiveKilo} alt="25"
               className={style.topWeightImg} >
             </WeightImage>

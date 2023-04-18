@@ -2,15 +2,11 @@ import React from 'react';
 
 
 
-function WeightImage({ id, src, alt, className, commonClassName, chooseWeightArray }) {
+function WeightImage({ id, src, alt, className, commonClassName, addToWeightArray }) {
 
-   let handleOnClick = (e) => {
-        chooseWeightArray(e.target.alt)
-        e.target.classList.add("hide")
-    }
     return (
         <div className={commonClassName}>
-            <img id={id} className={className} src={src} alt={alt} onClick={handleOnClick} />
+            <img id={id} className={className} src={src} alt={alt} onClick={addToWeightArray} />
         </div>
     );
 }

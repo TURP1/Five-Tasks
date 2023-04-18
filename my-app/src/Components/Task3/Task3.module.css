@@ -14,6 +14,8 @@
 
 .mainImg {
     height: 450px;
+    width: 650px;
+    position: relative;
 }
 
 .weightShelfContainer {
@@ -30,7 +32,6 @@
     width: 120px;
 }
 
-
 .middleWeightImg {
     width: 150px;
 }
@@ -42,24 +43,35 @@
 .barbelLeft {
     display: flex;
     flex-direction: row-reverse;
-    align-items: flex-start;
+    align-items: center;
+    height: 100%;
+    
 }
 
 .leftPositioning {
-    position: relative;
-    bottom: 357px;
-    left: -445px;
+    position: absolute;
+    bottom: 3px;
+    right: 445px;
+    height: 100%;
 }
 
 .barbelRight {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+    height: 100%;
+    
 }
 
 .rightPositioning {
-    position: relative;
-    bottom: 557px;
+    position: absolute;
+    bottom: 3px;
     left: 440px;
+    height: 100%;
 }
+.positionContainer{
+    position: relative;
+    height: 200px;
+}
+
 
