@@ -25,7 +25,7 @@ function handleClick(event) {
   console.log("Image clicked:", event.target);
 }
 
-function ThirdTask({ addToWeightArray, answer, weightArray }) {
+function ThirdTask({ addToWeightArray, answer, weightArray, deleteFromWeightArray }) {
 
   const images = document.querySelectorAll("img");
 
@@ -35,10 +35,11 @@ function ThirdTask({ addToWeightArray, answer, weightArray }) {
   });
   let mapWeightImage = ""
   if (weightArray.length) {
-    mapWeightImage = weightArray.map(item => {
+    mapWeightImage = weightArray.sort((a, b) => b.kilogram - a.kilogram).map(item => {
       console.log(item);
       return (
-        <WeightImageSideView key={item.kilogram} src={item.src} kilogram={item.kilogram} />
+        <WeightImageSideView key={item.kilogram} src={item.src}
+         kilogram={item.kilogram} deleteFromWeightArray={deleteFromWeightArray} />
       )
     })
   }
