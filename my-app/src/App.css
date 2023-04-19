@@ -1,5 +1,5 @@
 .App {
-  min-width: 480px;
+  min-width: 660px;
 }
 
 .App-header {
@@ -72,4 +72,12 @@ input[type=number] {
 
 .hide{
   display: none;
+}
+.right_answer{
+  color: green;
+  font-weight: bold;
+}
+.wrong_answer{
+  color: red;
+  font-weight: bold;
 }

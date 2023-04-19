@@ -25,7 +25,7 @@ function handleClick(event) {
   console.log("Image clicked:", event.target);
 }
 
-function ThirdTask({ addToWeightArray, answer, weightArray, deleteFromWeightArray }) {
+function ThirdTask({ addToWeightArray, answer, weightArray, deleteFromWeightArray, answerHandler, programAnswer }) {
 
   const images = document.querySelectorAll("img");
 
@@ -39,7 +39,7 @@ function ThirdTask({ addToWeightArray, answer, weightArray, deleteFromWeightArra
       console.log(item);
       return (
         <WeightImageSideView key={item.kilogram} src={item.src}
-         kilogram={item.kilogram} deleteFromWeightArray={deleteFromWeightArray} />
+          kilogram={item.kilogram} deleteFromWeightArray={deleteFromWeightArray} />
       )
     })
   }
@@ -55,27 +55,33 @@ function ThirdTask({ addToWeightArray, answer, weightArray, deleteFromWeightArra
       <div className={style.task3container}>
         <div className={style.leftSide}>
           <div>
-            Try to play with programme, starting record - 21
+            {programAnswer}
           </div>
-          <div>
-            {answer + " kg"}
+          <div className={style.userWeight}>
+            {"Your bar weight - "+ answer + " kg"}
+            <p>CLUE: If you want to remove some weight`s from barbell , click on it</p>
           </div>
           <div>
             <div className={style.positionContainer}>
               <img className={style.mainImg} src={mainImg} alt="mainTest" />
+
               <div className={style.leftPositioning}>
                 <div className={style.barbelLeft}>
                   {mapWeightImage}
                 </div>
               </div>
+
               <div className={style.rightPositioning}>
                 <div className={style.barbelRight}>
                   {mapWeightImage}
                 </div>
               </div>
-
+              <div className={style.submitBtn} onClick={answerHandler}>
+                Confirm Answer
+              </div>
             </div>
           </div>
+
         </div>
         <div className={style.weightShelfContainer}>
           <div className={style.weightContainer}>
