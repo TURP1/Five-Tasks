@@ -1,0 +1,59 @@
+.task3container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 35px;
+}
+
+.leftSideHelper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.helperContainer{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.shopContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.shopShirtContainer{
+    display: flex;
+    flex-direction: row;
+}
+.itemContainer{
+    display: flex;
+    flex-direction: column;
+}
+.itemContainer img{
+    width: 240px;
+    padding-top: 20px;
+}
+.confirmBtn{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    margin: 30px;
+}
+
+.imageT_shirt .itemHover{
+    width: 240px;
+    height: 240px;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    border-radius: 20px;
+    display: none;
+    margin-top: 20px;
+}
+
+.imageT_shirt:hover .itemHover{
+    display: block;
+}
+
