@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 35px;
+    gap: 70px;
 }
 
 .leftSideHelper {
@@ -11,31 +12,38 @@
     flex-direction: column;
     text-align: center;
 }
-.helperContainer{
+
+.helperContainer {
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
+    width: 250px;
 }
-.shopContainer{
+
+.shopContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
 }
-.shopShirtContainer{
+
+.shopShirtContainer {
     display: flex;
     flex-direction: row;
 }
-.itemContainer{
+
+.itemContainer {
     display: flex;
     flex-direction: column;
 }
-.itemContainer img{
+
+.itemContainer img {
     width: 240px;
     padding-top: 20px;
 }
-.confirmBtn{
+
+.confirmBtn {
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
@@ -43,7 +51,7 @@
     margin: 30px;
 }
 
-.imageT_shirt .itemHover{
+.imageT_shirt .itemHover {
     width: 240px;
     height: 240px;
     background-color: rgba(0, 0, 0, 0.9);
@@ -53,7 +61,46 @@
     margin-top: 20px;
 }
 
-.imageT_shirt:hover .itemHover{
+.imageT_shirt:hover .itemHover {
     display: block;
 }
 
+.itemHoverContainer {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+
+}
+
+.itemHoverContainer div {
+    padding: 2.5px;
+    font-size: 25px;
+    font-weight: bolder;
+
+}
+
+.itemHoverContainer .order {
+    padding-top: 15px;
+}
+
+.orderButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.orderButtons div {
+    margin-top: 5px;
+    height: 35px;
+    width: 35px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    cursor: pointer;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+}

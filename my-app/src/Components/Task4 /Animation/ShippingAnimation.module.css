@@ -1,0 +1,48 @@
+.animateContainer{
+    display: flex;
+    flex-direction: row;
+    margin: 200px 100px;
+    justify-content: space-between;
+}
+
+.animateContainer img{
+    height: 200px;
+    width: 200px;
+    background-color: #fff;
+}
+
+.car {
+    position: absolute;
+    left: 100px;
+    z-index: -1;
+    animation: drive 5s linear forwards;
+  }
+
+  @keyframes drive {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(calc(100vw - 400px));
+    }
+  }
+  @keyframes drive2 {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(calc(100vw - 350px));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .animateContainer img{
+        height: 150px;
+        width: 150px;
+        background-color: #fff;
+    }
+    .car{
+        animation: drive2 5s linear forwards;
+    }
+    
+  }

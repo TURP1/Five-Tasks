@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './Task4.module.css';
-import OrderShop from './OrderShop';
+
+import ShippingAnimation from './Animation/ShippingAnimation';
+import OrderShop from './OrderShop/OrderShop';
+import Registration from './Registration/Registration';
 
 
 
-function FourthTask({ orderShop }) {
+function FourthTask({ orderShop, orderedShirtsArray, shippingAnimation, registration }) {
 
   return (
     <div>
@@ -22,9 +25,10 @@ function FourthTask({ orderShop }) {
           Якщо це можливо, програма повинна вивести будь-яке з можливих рішень.
         </p>
       </div>
-      <div className={style.task3container}>
-        {orderShop && <OrderShop></OrderShop>}
-      </div>
+        {orderShop && <OrderShop orderedShirtsArray={orderedShirtsArray}></OrderShop>}
+      {shippingAnimation && <ShippingAnimation></ShippingAnimation>}
+      {registration && <Registration></Registration>}
+
     </div>
 
   );

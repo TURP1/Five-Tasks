@@ -1,0 +1,103 @@
+.mainRegisterContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.registerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.shirtListContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 25px;
+    
+}
+
+.shirtListContainer div {
+    padding: 10px 20px;
+}
+
+.namingOfTheShirtList{
+    text-align: center;
+    font-size: 30px;
+}
+.namingOfTheCompetitorsList{
+    padding: 10px 0 0 0;
+    text-align: center;
+    font-size: 25px;
+}
+.competitorsListContainer{
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+.competitorsListItems{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.registerForm{
+    min-width: 600px;
+    min-height: 277px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    gap: 20px;
+}
+.formList{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 30px;
+    margin-left: 40px;
+}
+.nameInput{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.namingOfChoosingShirt{
+    text-align: center;
+    font-size: 30px;
+}
+.tipsOfChoosingShirt{
+    text-align: center;
+    font-size: 15px;
+    margin-top: -20px;
+}
+.formSizeChoosing{
+    display: flex;
+    gap: 5px;
+}
+
+.formSizeChoosing img{
+    width: 80px;
+    height: 80px;
+}
+
+.hoverImg {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(57, 173, 57, 0.651);
+    position: absolute;
+    border-radius: 20px;
+    display: none;
+}
+
+/* .imageT_shirt:hover .hoverImg {
+    display: block;
+} */
