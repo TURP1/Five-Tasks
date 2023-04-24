@@ -2,12 +2,24 @@ import React, { useState } from "react";
 import s from './Registration.module.css';
 
 
+let a = [
+    { name: "sd", size: [[{ size: "M" }, { size: "L" }]] },
+    { name: "sdasd", size: [{ size: "L" }] }
+]
 
 
-
-function Competitors({ }) {
-
-
+function Competitors({ registerList }) {
+  
+    let mapRegisteredUser = registerList.map((u, index) => {
+        return (
+            <div key={index} className={s.competitorsListItems}>
+                <div>{u.name}</div>
+                <div>
+                    {u.size.map((t, i) => <span key={i}>{t.size + " "}</span>)}
+                </div>
+            </div>
+        )
+    })
     return (
         <div className={s.registerContainer}>
             <div className={s.namingOfTheCompetitorsList}>Competitors list</div>
@@ -16,10 +28,7 @@ function Competitors({ }) {
                     <div>Name</div>
                     <div>Size</div>
                 </div>
-                <div className={s.competitorsListItems}>
-                    <div>Joui</div>
-                    <div>M</div>
-                </div>
+                {mapRegisteredUser}
             </div>
         </div>
     )

@@ -87,7 +87,7 @@ function ThirdTask({ addToWeightArray, answer, weightArray, deleteFromWeightArra
                   {mapWeightImage}
                 </div>
               </div>
-              <div className={style.submitBtn} onClick={answerHandler}>
+              <div className="submitBtn" onClick={answerHandler}>
                 Confirm Answer
               </div>
             </div>

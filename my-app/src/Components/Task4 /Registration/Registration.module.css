@@ -1,90 +1,103 @@
-.mainRegisterContainer{
+.mainRegisterContainer {
     display: flex;
     flex-direction: row;
     gap: 30px;
 }
-.registerContainer{
+
+.registerContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
 }
-.shirtListContainer{
+
+.shirtListContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-size: 25px;
-    
+
 }
 
 .shirtListContainer div {
     padding: 10px 20px;
 }
 
-.namingOfTheShirtList{
+.namingOfTheShirtList {
     text-align: center;
     font-size: 30px;
 }
-.namingOfTheCompetitorsList{
+
+.namingOfTheCompetitorsList {
     padding: 10px 0 0 0;
     text-align: center;
     font-size: 25px;
 }
-.competitorsListContainer{
+
+.competitorsListContainer {
     min-width: 300px;
     display: flex;
     flex-direction: column;
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
-    
+
 }
-.competitorsListItems{
+
+.competitorsListItems {
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
 }
 
-.registerForm{
+.registerForm {
     min-width: 600px;
     min-height: 277px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.formContainer{
+
+.formContainer {
     display: flex;
     flex-direction: column;
     padding-top: 30px;
     gap: 20px;
+    align-items: center;
 }
-.formList{
+
+.formList {
     display: flex;
     align-items: center;
     gap: 30px;
     font-size: 30px;
-    margin-left: 40px;
+
 }
-.nameInput{
+
+.nameInput {
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
+    width: 180px;
 }
-.namingOfChoosingShirt{
+
+.namingOfChoosingShirt {
     text-align: center;
     font-size: 30px;
 }
-.tipsOfChoosingShirt{
+
+.tipsOfChoosingShirt {
     text-align: center;
     font-size: 15px;
     margin-top: -20px;
 }
-.formSizeChoosing{
+
+.formSizeChoosing {
     display: flex;
     gap: 5px;
 }
 
-.formSizeChoosing img{
+.formSizeChoosing img {
     width: 80px;
     height: 80px;
 }
@@ -95,7 +108,6 @@
     background-color: rgba(57, 173, 57, 0.651);
     position: absolute;
     border-radius: 20px;
-    display: none;
 }
 
 /* .imageT_shirt:hover .hoverImg {
