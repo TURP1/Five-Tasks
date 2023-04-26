@@ -7,19 +7,24 @@ import FormRegister from "./FormRegister";
 
 
 
+function Registration(
+    { orderedShirts, orderedShirtsArrayDecrease, handleOrderMissing,
+        competitorsList, registrationForm, addCompetitor, registerList
+    }) {
 
-function Registration({ }) {
-    const [registrationForm, setRegistrationForm] = useState(false);
-    const [registerList, setRegisterList] = useState([]);
 
-    function competitorsList(nameValue, submitSize) {
-        setRegisterList([...registerList, { name: nameValue, size: submitSize }])
-        setRegistrationForm(false)
+    function orderMissing() {
+        return orderedShirts.some(shirt => shirt.quantity < 0);
     }
+    let mapLeftovers = orderedShirts.map((shirt, index) => {
 
-    function addCompetitor() {
-        setRegistrationForm(true)
-    }
+        return (
+            <div key={index} className={s.shirtListContainer}>
+                <div>{shirt.name}</div>
+                <div>{shirt.quantity}</div>
+            </div>
+        )
+    })
 
     return (
         <div className={style.task3container}>
@@ -35,34 +40,12 @@ function Registration({ }) {
                         >Add Competitor</button>}
                     <div className={style.helperContainer}>
                         <div className={s.namingOfTheShirtList}> Shirts in store</div>
-                        <div className={s.shirtListContainer}>
-                            <div>Name</div>
-                            <div>Size</div>
-                        </div>
-                        <div className={s.shirtListContainer}>
-                            <div>Name</div>
-                            <div>Size</div>
-                        </div>
-                        <div className={s.shirtListContainer}>
-                            <div>Name</div>
-                            <div>Size</div>
-                        </div>
-                        <div className={s.shirtListContainer}>
-                            <div>Name</div>
-                            <div>Size</div>
-                        </div>
-                        <div className={s.shirtListContainer}>
-                            <div>Name</div>
-                            <div>Size</div>
-                        </div>
-                        <div className={s.shirtListContainer}>
-                            <div>Name</div>
-                            <div>Size</div>
-                        </div>
+                        {mapLeftovers}
                     </div>
+                    {orderMissing() && <button onClick={handleOrderMissing} className="submitBtn">Order missing t-shirts</button>}
                 </div>
                 {registrationForm
-                    ? <FormRegister competitorsList={competitorsList}></FormRegister>
+                    ? <FormRegister competitorsList={competitorsList} orderedShirtsArrayDecrease={orderedShirtsArrayDecrease}></FormRegister>
                     : <Competitors registerList={registerList}></Competitors>}
             </div>
 

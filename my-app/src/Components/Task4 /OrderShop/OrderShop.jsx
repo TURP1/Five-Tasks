@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from '.././Task4.module.css';
 import buyerImg from '../../../assets/6.jpg';
 
@@ -10,19 +10,54 @@ import XXL from '../../../assets/task4/XXL.png'
 import XXXL from '../../../assets/task4/XXXL.png'
 import OrderItem from "./OrderItem";
 
+let quantitySizes = [
+    {
+        name: "S",
+        quantity: 0
+    },
+    {
+        name: "M",
+        quantity: 0
+    },
+    {
+        name: "L",
+        quantity: 0
+    },
+    {
+        name: "XL",
+        quantity: 0
+    },
+    {
+        name: "XXL",
+        quantity: 0
+    },
+    {
+        name: "XXXL",
+        quantity: 0
+    },
+]
+
 
 function OrderShop({ orderedShirtsArray }) {
-    const [orderItems, setOrderItems] = useState([]);
+    const [orderItems, setOrderItems] = useState(quantitySizes);
 
 
 
     function handleClangingCount(name, quantity) {
-        setOrderItems([...orderItems, { "name": name, "quantity": quantity }]);
-
-    }
+        setOrderItems(prevOrderItems => 
+          prevOrderItems.map(orderItem => {
+            if (orderItem.name === name) {
+              return {
+                ...orderItem,
+                quantity: orderItem.quantity + quantity
+              }
+            }
+            return orderItem;
+          })
+        );
+      }
 
     const onSubmit = () => {
-        console.log(orderItems);
         orderItems.length && orderedShirtsArray(orderItems)
 
     }

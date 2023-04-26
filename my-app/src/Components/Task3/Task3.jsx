@@ -36,7 +36,6 @@ function ThirdTask({ addToWeightArray, answer, weightArray, deleteFromWeightArra
   let mapWeightImage = ""
   if (weightArray.length) {
     mapWeightImage = weightArray.sort((a, b) => b.kilogram - a.kilogram).map(item => {
-      console.log(item);
       return (
         <WeightImageSideView key={item.kilogram} src={item.src}
           kilogram={item.kilogram} deleteFromWeightArray={deleteFromWeightArray} />

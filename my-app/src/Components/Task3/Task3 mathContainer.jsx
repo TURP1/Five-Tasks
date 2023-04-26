@@ -44,8 +44,6 @@ function ThirdTaskMath() {
 
     function answerHandler() {
         setNextRecord(mathCalc())
-        console.log(answer);
-        console.log(record);
 
         answer === record
             ? setProgramAnswer(<div className="right_answer">You're right, the next record is - {record} kg, with minimum cost of forces</div> )

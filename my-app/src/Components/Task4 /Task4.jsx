@@ -7,7 +7,11 @@ import Registration from './Registration/Registration';
 
 
 
-function FourthTask({ orderShop, orderedShirtsArray, shippingAnimation, registration }) {
+function FourthTask({
+  orderShop, orderedShirtsArray, shippingAnimation, registration,
+  orderedShirts, orderedShirtsArrayDecrease, handleOrderMissing,
+  competitorsList, registrationForm, addCompetitor, registerList
+}) {
 
   return (
     <div>
@@ -25,9 +29,14 @@ function FourthTask({ orderShop, orderedShirtsArray, shippingAnimation, registra
           Якщо це можливо, програма повинна вивести будь-яке з можливих рішень.
         </p>
       </div>
-        {orderShop && <OrderShop orderedShirtsArray={orderedShirtsArray}></OrderShop>}
+      {orderShop && <OrderShop orderedShirtsArray={orderedShirtsArray}></OrderShop>}
       {shippingAnimation && <ShippingAnimation></ShippingAnimation>}
-      {registration && <Registration></Registration>}
+      {registration &&
+        <Registration
+          orderedShirts={orderedShirts} orderedShirtsArrayDecrease={orderedShirtsArrayDecrease}
+          handleOrderMissing={handleOrderMissing} competitorsList={competitorsList}
+          registrationForm={registrationForm} addCompetitor={addCompetitor}
+          registerList={registerList}></Registration>}
 
     </div>
 

@@ -109,7 +109,10 @@
     position: absolute;
     border-radius: 20px;
 }
-
+.red{
+    color: red;
+    font-weight: bolder;
+}
 /* .imageT_shirt:hover .hoverImg {
     display: block;
 } */

@@ -2,12 +2,6 @@ import React, { useState } from "react";
 import s from './Registration.module.css';
 
 
-let a = [
-    { name: "sd", size: [[{ size: "M" }, { size: "L" }]] },
-    { name: "sdasd", size: [{ size: "L" }] }
-]
-
-
 function Competitors({ registerList }) {
   
     let mapRegisteredUser = registerList.map((u, index) => {

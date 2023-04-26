@@ -9,7 +9,7 @@ import XXL from '../../../assets/task4/XXL_choosing.png'
 import XXXL from '../../../assets/task4/XXXL_choosing.png'
 
 
-function FormRegister({competitorsList }) {
+function FormRegister({competitorsList, orderedShirtsArrayDecrease}) {
 
     let sizes = [
         {
@@ -64,7 +64,6 @@ function FormRegister({competitorsList }) {
         function firstFilterArray(chooseIndex) {
             const filteredArr = chooseSize.filter((_, i) => i >= chooseIndex - 1 && i <= chooseIndex + 1);
             setChooseSize(filteredArr)
-            console.log(filteredArr);
         }
 
     }
@@ -77,11 +76,14 @@ function FormRegister({competitorsList }) {
         }
         else e.target.classList.add("hide")
     }
+
     let handleSubmitUser = (competitorsList) => {
         let submitSize = chooseSize.filter(el => el.checked === true);
         if (nameInputRef.current.value && submitSize ) {
             competitorsList(nameInputRef.current.value, submitSize)
+            orderedShirtsArrayDecrease(submitSize)
         }
+
     }
 
     let mapSizes = chooseSize.map(size => {
