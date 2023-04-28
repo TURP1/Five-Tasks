@@ -14,19 +14,22 @@
 .input:focus {
     border: 2px solid #f1f4f0;
 }
-.task2container{
+
+.task2container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 35px;
 }
-.queryContainer{
+
+.queryContainer {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.arrayDisplayer{
+
+.arrayDisplayer {
     display: flex;
     flex-direction: row;
     padding: 5px;
@@ -34,12 +37,14 @@
     border-radius: 10px;
     gap: 5px;
 }
-.arrayContainer{
+
+.arrayContainer {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 20px;
 }
-.duplicated{
+
+.duplicated {
     border-color: red;
 }

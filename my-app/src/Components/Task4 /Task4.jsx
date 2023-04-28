@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import style from './Task4.module.css';
+import React from 'react';
 
 import ShippingAnimation from './Animation/ShippingAnimation';
 import OrderShop from './OrderShop/OrderShop';

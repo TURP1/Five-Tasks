@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import style from '.././Task4.module.css';
 import buyerImg from '../../../assets/6.jpg';
 
