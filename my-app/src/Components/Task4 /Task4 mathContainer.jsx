@@ -57,7 +57,7 @@ function FourthTaskMath() {
         else {
             let size2 = submitSize[1].size;
             orderedShirts.forEach(t => {
-                if (t.name === size || size2) {
+                if (t.name === size || t.name === size2) {
                     t.quantity -= 1
                 }
             })

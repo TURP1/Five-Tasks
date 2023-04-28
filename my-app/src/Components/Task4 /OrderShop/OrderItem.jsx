@@ -13,7 +13,7 @@ function OrderItem({ size, src, handleClangingCount }) {
         orderItem !== 0 && setOrderItem(orderItem - 1)
     }
     function onBlur() {
-        orderItem > 0 && handleClangingCount(size, orderItem)
+        orderItem >= 0 && handleClangingCount(size, orderItem)
     }
 
     

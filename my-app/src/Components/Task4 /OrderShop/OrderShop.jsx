@@ -49,7 +49,7 @@ function OrderShop({ orderedShirtsArray }) {
             if (orderItem.name === name) {
               return {
                 ...orderItem,
-                quantity: orderItem.quantity + quantity
+                quantity: quantity
               }
             }
             return orderItem;
@@ -58,7 +58,7 @@ function OrderShop({ orderedShirtsArray }) {
       }
 
     const onSubmit = () => {
-        orderItems.length && orderedShirtsArray(orderItems)
+         orderedShirtsArray(orderItems)
 
     }
 
