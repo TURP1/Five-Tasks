@@ -28,7 +28,7 @@ function FourthTask({
           Якщо це можливо, програма повинна вивести будь-яке з можливих рішень.
         </p>
       </div>
-      {orderShop && <OrderShop orderedShirtsArray={orderedShirtsArray}></OrderShop>}
+      {orderShop && <OrderShop orderedShirts={orderedShirts}  orderedShirtsArray={orderedShirtsArray}></OrderShop>}
       {shippingAnimation && <ShippingAnimation></ShippingAnimation>}
       {registration &&
         <Registration

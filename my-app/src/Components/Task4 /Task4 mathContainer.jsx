@@ -44,6 +44,7 @@ function FourthTaskMath() {
         setOrderShop(false);
         animationDirector();
     }
+    
     function orderedShirtsArrayDecrease(submitSize) {
         let size = submitSize[0].size;
         if (submitSize.length === 1) {

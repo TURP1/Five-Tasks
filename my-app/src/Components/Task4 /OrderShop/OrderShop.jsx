@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from '.././Task4.module.css';
 import buyerImg from '../../../assets/6.jpg';
 
@@ -38,27 +38,34 @@ let quantitySizes = [
 ]
 
 
-function OrderShop({ orderedShirtsArray }) {
+function OrderShop({ orderedShirtsArray, orderedShirts }) {
     const [orderItems, setOrderItems] = useState(quantitySizes);
+    const [missingItems, setMissingItems] = useState([]);
 
+    useEffect(() => {
+        if (orderedShirts.length) {
+            let missingItemArray = orderedShirts.filter(item => item.quantity < 0)
+            setMissingItems(missingItemArray)
+        }
+    }, [orderedShirts.length])
 
 
     function handleClangingCount(name, quantity) {
-        setOrderItems(prevOrderItems => 
-          prevOrderItems.map(orderItem => {
-            if (orderItem.name === name) {
-              return {
-                ...orderItem,
-                quantity: quantity
-              }
-            }
-            return orderItem;
-          })
+        setOrderItems(prevOrderItems =>
+            prevOrderItems.map(orderItem => {
+                if (orderItem.name === name) {
+                    return {
+                        ...orderItem,
+                        quantity: quantity
+                    }
+                }
+                return orderItem;
+            })
         );
-      }
+    }
 
     const onSubmit = () => {
-         orderedShirtsArray(orderItems)
+        orderedShirtsArray(orderItems)
 
     }
 
@@ -71,15 +78,15 @@ function OrderShop({ orderedShirtsArray }) {
             <div className={style.shopContainer}>
                 <div>Help manager to buy t-shirts </div>
                 <div className={style.shopShirtContainer}>
-                    <OrderItem size={"S"} src={S} handleClangingCount={handleClangingCount}></OrderItem>
-                    <OrderItem size={"M"} src={M} handleClangingCount={handleClangingCount}></OrderItem>
-                    <OrderItem size={"L"} src={L} handleClangingCount={handleClangingCount}></OrderItem>
+                    <OrderItem size={"S"} missingItems={missingItems} src={S} handleClangingCount={handleClangingCount}></OrderItem>
+                    <OrderItem size={"M"} missingItems={missingItems} src={M} handleClangingCount={handleClangingCount}></OrderItem>
+                    <OrderItem size={"L"} missingItems={missingItems} src={L} handleClangingCount={handleClangingCount}></OrderItem>
 
                 </div>
                 <div className={style.shopShirtContainer}>
-                    <OrderItem size={"XL"} src={XL} handleClangingCount={handleClangingCount}></OrderItem>
-                    <OrderItem size={"XXL"} src={XXL} handleClangingCount={handleClangingCount}></OrderItem>
-                    <OrderItem size={"XXXL"} src={XXXL} handleClangingCount={handleClangingCount}></OrderItem>
+                    <OrderItem size={"XL"} missingItems={missingItems} src={XL} handleClangingCount={handleClangingCount}></OrderItem>
+                    <OrderItem size={"XXL"} missingItems={missingItems} src={XXL} handleClangingCount={handleClangingCount}></OrderItem>
+                    <OrderItem size={"XXXL"} missingItems={missingItems} src={XXXL} handleClangingCount={handleClangingCount}></OrderItem>
                 </div>
                 <button onClick={onSubmit} className={style.confirmBtn} >
                     Confirm order
