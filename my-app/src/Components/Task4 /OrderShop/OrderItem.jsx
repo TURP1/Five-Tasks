@@ -11,8 +11,11 @@ function OrderItem({ size, src, handleClangingCount, missingItems }) {
             let element = missingItems.find(item => item.name === size).quantity
             setOrderItem(Math.abs(element));
         }
-     }, [missingItems])
-    
+        handleClangingCount(size, orderItem)
+    }, [missingItems, size, handleClangingCount, orderItem]);
+
+
+
     function handlePlus() {
         setOrderItem(orderItem + 1)
     }
