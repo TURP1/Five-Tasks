@@ -1,15 +1,20 @@
 import React from 'react';
 import style from './Stage.module.css'
+import { useState } from 'react';
 
 
 
-function Square({heightIndex, widthIndex }) {
+function Square({heightIndex, widthIndex, changeStageSituation }) {
+    const [choose, setChoose] = useState(false)
 
-
+    let chooseHandler = () => {
+        setChoose(!choose)
+        changeStageSituation({line: widthIndex , column: heightIndex, checked: !choose })
+    }
 
   return (
-    <div className={style.square}>
-        {`heightIndex - ${heightIndex} , widthIndex - ${widthIndex}`}
+    <div className={style.square} onClick={chooseHandler}>
+        {`heightIndex - ${heightIndex} , widthIndex - ${widthIndex}, choose - ${choose}`}
     </div>
   )
 }
