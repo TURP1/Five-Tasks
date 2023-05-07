@@ -1,0 +1,22 @@
+.input {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.margin_top_10 {
+    margin-top: 10px;
+}
+
+.margin_right_5 {
+    margin-right: 5px;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+}
+
+.tac{
+    text-align: center;
+}

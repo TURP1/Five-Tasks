@@ -4,6 +4,7 @@ import FirstTaskMath from './Components/Task1/Task1 mathContainer';
 import SecondTaskMath from './Components/Task2/Task2 mathContainer';
 import ThirdTaskMath from './Components/Task3/Task3 mathContainer';
 import FourthTaskMath from './Components/Task4 /Task4 mathContainer';
+import FifthTaskMath from './Components/Task5/Task5 mathContainer';
 import logo from './assets/logo.jpeg'
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
       <ThirdTaskMath></ThirdTaskMath>
       <HorizontalLine></HorizontalLine>
       <FourthTaskMath></FourthTaskMath>
+      <HorizontalLine></HorizontalLine>
+      <FifthTaskMath></FifthTaskMath>
+
       </div>
     </div>
   );

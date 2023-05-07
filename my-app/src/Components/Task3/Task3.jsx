@@ -20,19 +20,9 @@ import WeightImageSideView from './WeightImageSideView';
 
 
 
-function handleClick(event) {
-  // Handle the click event here
-  console.log("Image clicked:", event.target);
-}
 
 function ThirdTask({ addToWeightArray, answer, weightArray, deleteFromWeightArray, answerHandler, programAnswer }) {
 
-  const images = document.querySelectorAll("img");
-
-  // Loop through the images and add the event listener
-  images.forEach(image => {
-    image.addEventListener("click", handleClick);
-  });
   let mapWeightImage = ""
   if (weightArray.length) {
     mapWeightImage = weightArray.sort((a, b) => b.kilogram - a.kilogram).map(item => {
@@ -60,7 +50,7 @@ function ThirdTask({ addToWeightArray, answer, weightArray, deleteFromWeightArra
           Треба написати програму, яка за заданою вагою буде знаходити мінімальний наступний.
 
           На штанзі може бути не більше 24 дискових  навантажувачі, тобто максимум 12 з кожного боку.
-          </p>
+        </p>
       </div>
       <div className={style.task3container}>
         <div className={style.leftSide}>

@@ -16,7 +16,7 @@ function FourthTaskMath() {
         setTimeout(() => {
             setShippingAnimation(false);
             setRegistration(true);
-        }, 1000);
+        }, 5000);
     }
 
     function handleOrderMissing() {

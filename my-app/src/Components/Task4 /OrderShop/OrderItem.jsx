@@ -12,7 +12,7 @@ function OrderItem({ size, src, handleClangingCount, missingItems }) {
             setOrderItem(Math.abs(element));
         }
         handleClangingCount(size, orderItem)
-    }, [missingItems, size, handleClangingCount, orderItem]);
+    }, [missingItems]);
 
 
 
