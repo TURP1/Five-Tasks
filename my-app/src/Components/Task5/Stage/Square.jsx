@@ -14,7 +14,7 @@ function Square({heightIndex, widthIndex, changeStageSituation }) {
 
   return (
     <div className={style.square} onClick={chooseHandler}>
-        {`heightIndex - ${heightIndex} , widthIndex - ${widthIndex}, choose - ${choose}`}
+        {`row - ${heightIndex} , column - ${widthIndex}, choose - ${choose}`}
     </div>
   )
 }

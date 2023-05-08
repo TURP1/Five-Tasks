@@ -2,11 +2,20 @@ import React, { useEffect, useState } from 'react';
 import style from './Stage.module.css'
 import Flex from '../additional/Flex';
 import Square from './Square';
+import VerticalLamp from '../additional/VerticalLamp';
+import HorizontalLamp from '../additional/HorizontalLamp';
+
 
 
 function Stage({ stage }) {
 
   const [stageObj, setStageObj] = useState([])
+  const [verticalLamp, setVerticalLamp] = useState({ top: "90px", display: "block" })
+  const [horizontalLamp, setHorizontalLamp] = useState({ left: "0px", display: "block" })
+  const [columns, setColumns] = useState({ 0: 0, 1: 0, 2: 0, 3: 0 })
+  const [rows, setRows] = useState({ 0: 0, 1: 0, 2: 0 })
+
+
 
   useEffect(() => {
     const newStageObj = [];
@@ -15,14 +24,78 @@ function Stage({ stage }) {
         newStageObj.push({ column: i, line: j, checked: false });
       }
     }
-    console.log(newStageObj);
     setStageObj(newStageObj);
   }, [stage]);
 
+
+  // { column: 0, line: 2, checked: false }
+
   useEffect(() => {
     console.log(stageObj);
+    let newActor = stageObj.filter(obj => obj.checked === true);
+
+    // let newColumnArray = () => {
+    //   const updatedArray = columns.map((item) => {
+    //     if (item.column === obj.column) {
+    //       return { ...item, checked: obj.checked }
+    //     }
+    //     return item
+    //   })
+  
+    //   setStageObj(updatedArray);
+    // }
+   
+
+    columns[newActor.column]++
+    rows[newActor.line]++
+    compareColumns(columns);
+    compareRows(rows)
   }, [stageObj]);
 
+
+  function compareColumns(columns) {
+
+    const biggest = Object.keys(columns).reduce((a, b) => columns[a] > columns[b] ? a : b);
+    console.log({ [biggest]: columns[biggest] }); // Output: {1: 3}
+
+    switch (parseInt(biggest)) {
+      case 0:
+        setHorizontalLamp({ left: "90px", display: "block" })
+        break;
+      case 1:
+        setHorizontalLamp({ left: "290px", display: "block" })
+        break;
+      case 2:
+        setHorizontalLamp({ left: "490px", display: "block" })
+        break;
+      case 3:
+        setHorizontalLamp({ left: "690px", display: "block" })
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  function compareRows(rows) {
+
+    const biggest = Object.keys(rows).reduce((a, b) => rows[a] > rows[b] ? a : b);
+
+    switch (parseInt(biggest)) {
+      case 0:
+        setVerticalLamp({ top: "90px", display: "block" })
+        break;
+      case 1:
+        setVerticalLamp({ top: "290px", display: "block" })
+        break;
+      case 2:
+        setVerticalLamp({ top: "490px", display: "block" })
+        break;
+
+      default:
+        break;
+    }
+  }
 
 
   function createArray(length) {
@@ -57,10 +130,10 @@ function Stage({ stage }) {
   return (
     <div className={style.stageContainer}>
       <Flex gap="20px">
-        <VerticalLine></VerticalLine>
+        <VerticalLine top={verticalLamp.top} display={verticalLamp.display}></VerticalLine>
         <Flex direction="column" gap="0px">
           {mapStage}
-          <HorizontalLine></HorizontalLine>
+          <HorizontalLine left={horizontalLamp.left} display={horizontalLamp.display}></HorizontalLine>
         </Flex>
       </Flex>
 
@@ -70,10 +143,22 @@ function Stage({ stage }) {
 
 export default Stage;
 
-function VerticalLine() {
-  return (<div className={style.vertical}></div>);
+function VerticalLine({ top, display }) {
+  return (
+    <div>
+      <VerticalLamp top={top} display={display}></VerticalLamp>
+      <div className={style.vertical}></div>
+
+    </div>
+
+  );
 }
 
-function HorizontalLine() {
-  return (<div className={style.horizontal}></div>);
+function HorizontalLine({ left, display }) {
+  return (
+    <div>
+      <HorizontalLamp left={left} display={display}></HorizontalLamp>
+      <div className={style.horizontal}></div>
+    </div>
+  );
 }

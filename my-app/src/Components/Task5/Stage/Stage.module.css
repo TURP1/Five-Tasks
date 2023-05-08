@@ -10,6 +10,7 @@ margin: 40px;
 .vertical{
   width: 10px;
   background-color: black;
+  height: calc(100% - 110px);
 }
 
 .horizontal{
