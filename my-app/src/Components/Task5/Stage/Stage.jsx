@@ -7,13 +7,14 @@ import HorizontalLamp from '../additional/HorizontalLamp';
 
 
 
+
 function Stage({ stage }) {
 
   const [stageObj, setStageObj] = useState([])
   const [verticalLamp, setVerticalLamp] = useState({ top: "90px", display: "block" })
   const [horizontalLamp, setHorizontalLamp] = useState({ left: "0px", display: "block" })
-  const [columns, setColumns] = useState({ 0: 0, 1: 0, 2: 0, 3: 0 })
-  const [rows, setRows] = useState({ 0: 0, 1: 0, 2: 0 })
+  const [columns, setColumns] = useState({ 0: 1, 1: 0, 2: 0, 3: 0 })
+  const [rows, setRows] = useState({ 0: 1, 1: 0, 2: 0 })
 
 
 
@@ -34,20 +35,8 @@ function Stage({ stage }) {
     console.log(stageObj);
     let newActor = stageObj.filter(obj => obj.checked === true);
 
-    // let newColumnArray = () => {
-    //   const updatedArray = columns.map((item) => {
-    //     if (item.column === obj.column) {
-    //       return { ...item, checked: obj.checked }
-    //     }
-    //     return item
-    //   })
-  
-    //   setStageObj(updatedArray);
-    // }
-   
-
-    columns[newActor.column]++
-    rows[newActor.line]++
+    // columns[newActor.column]++
+    // rows[newActor.line]++
     compareColumns(columns);
     compareRows(rows)
   }, [stageObj]);
