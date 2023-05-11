@@ -10,11 +10,13 @@ import HorizontalLamp from '../additional/HorizontalLamp';
 
 function Stage({ stage }) {
 
+  const [newActor, setNewActor] = useState([])
+  const [checkedActor, setCheckedActor] = useState({})
   const [stageObj, setStageObj] = useState([])
   const [verticalLamp, setVerticalLamp] = useState({ top: "90px", display: "block" })
   const [horizontalLamp, setHorizontalLamp] = useState({ left: "0px", display: "block" })
-  const [columns, setColumns] = useState({ 0: 1, 1: 0, 2: 0, 3: 0 })
-  const [rows, setRows] = useState({ 0: 1, 1: 0, 2: 0 })
+  const [columns, setColumns] = useState({ 0: 0, 1: 0, 2: 0, 3: 0 })
+  const [rows, setRows] = useState({ 0: 0, 1: 0, 2: 0 })
 
 
 
@@ -22,7 +24,7 @@ function Stage({ stage }) {
     const newStageObj = [];
     for (let i = 0; i < stage.height; i++) {
       for (let j = 0; j < stage.width; j++) {
-        newStageObj.push({ column: i, line: j, checked: false });
+        newStageObj.push({ column: j, line: i, checked: false });
       }
     }
     setStageObj(newStageObj);
@@ -31,58 +33,58 @@ function Stage({ stage }) {
 
   // { column: 0, line: 2, checked: false }
 
-  useEffect(() => {
-    console.log(stageObj);
-    let newActor = stageObj.filter(obj => obj.checked === true);
 
-    // columns[newActor.column]++
-    // rows[newActor.line]++
+
+  useEffect(() => {
+    if (newActor.length > 0) {
+      const newColumns = { ...columns };
+      const newRows = { ...rows };
+  
+      newActor.forEach((actor) => {
+        newColumns[actor.column]++;
+        newRows[actor.line]++;
+      });
+  
+      setColumns(newColumns);
+      setRows(newRows);
+    }
+  }, [newActor]);
+  
+  useEffect(() => {
+    compareRows(rows);
+  }, [rows]);
+  
+  useEffect(() => {
+    compareColumns(columns);
+  }, [columns]);
+  
+
+
+  useEffect(() => {
+    setNewActor(checkedActor.column !== undefined ? [checkedActor] : []); // check if newClickedActor has a truthy value before setting newActor state variable
     compareColumns(columns);
     compareRows(rows)
-  }, [stageObj]);
+  }, [checkedActor]);
 
+  function compareRows(rows) {
+    const biggest = Object.keys(rows).reduce((a, b) => rows[a] > rows[b] ? a : b);
+    const topPositions = ["90px", "290px", "490px"];
 
-  function compareColumns(columns) {
-
-    const biggest = Object.keys(columns).reduce((a, b) => columns[a] > columns[b] ? a : b);
-    console.log({ [biggest]: columns[biggest] }); // Output: {1: 3}
-
-    switch (parseInt(biggest)) {
-      case 0:
-        setHorizontalLamp({ left: "90px", display: "block" })
-        break;
-      case 1:
-        setHorizontalLamp({ left: "290px", display: "block" })
-        break;
-      case 2:
-        setHorizontalLamp({ left: "490px", display: "block" })
-        break;
-      case 3:
-        setHorizontalLamp({ left: "690px", display: "block" })
-        break;
-
-      default:
-        break;
+    if (rows[biggest] === 0) {
+      setVerticalLamp({ top: "90px", display: "none" });
+    } else {
+      setVerticalLamp({ top: topPositions[biggest], display: "block" });
     }
   }
 
-  function compareRows(rows) {
+  function compareColumns(columns) {
+    const biggest = Object.keys(columns).reduce((a, b) => columns[a] > columns[b] ? a : b);
+    const leftPositions = ["90px", "290px", "490px", "690px"];
 
-    const biggest = Object.keys(rows).reduce((a, b) => rows[a] > rows[b] ? a : b);
-
-    switch (parseInt(biggest)) {
-      case 0:
-        setVerticalLamp({ top: "90px", display: "block" })
-        break;
-      case 1:
-        setVerticalLamp({ top: "290px", display: "block" })
-        break;
-      case 2:
-        setVerticalLamp({ top: "490px", display: "block" })
-        break;
-
-      default:
-        break;
+    if (columns[biggest] === 0) {
+      setHorizontalLamp({ left: "0px", display: "none" });
+    } else {
+      setHorizontalLamp({ left: leftPositions[biggest], display: "block" });
     }
   }
 
@@ -106,6 +108,7 @@ function Stage({ stage }) {
 
 
   function changeStageSituation(obj) {
+    setCheckedActor(obj);
     const updatedArray = stageObj.map((item) => {
       if (item.column === obj.column && item.line === obj.line) {
         return { ...item, checked: obj.checked }
@@ -114,6 +117,7 @@ function Stage({ stage }) {
     })
 
     setStageObj(updatedArray);
+
   }
 
   return (
