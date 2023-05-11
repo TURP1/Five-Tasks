@@ -1,5 +1,5 @@
 .stageContainer {
-  margin: 40px;
+  margin-bottom: 100px;
 }
 
 .square {
@@ -20,15 +20,20 @@
   background-color: black;
 }
 
-.actorsListContainer{
+.actorsListContainer {
   overflow-x: scroll;
   margin: 30px auto;
   height: 250px;
   white-space: nowrap;
+  text-align: center;
 }
 
 .actorsImage {
   width: 200px;
   height: 200px;
+  padding: 0 5px;
 }
 
+.margin_10px {
+  margin: 0 20px;
+}

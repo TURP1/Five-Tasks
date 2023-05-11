@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import style from './Stage.module.css'
 import { useState } from 'react';
 
@@ -12,18 +12,29 @@ import seventhActor from "../../../assets/task5/7.png"
 import eighthActor from "../../../assets/task5/8.png"
 
 
+
 function ActorsList({ actorsCount }) {
   const [actors, setActors] = useState(
     [firstActor, secondActor, thirdActor, fourthActor, fifthActor, sixthActor, seventhActor, eighthActor]
   )
+
+  useEffect(() => {
+    let newActorsArray = actors.slice(0, 8) //actorsCount
+    setActors(newActorsArray)
+  }, [actorsCount]);
+
+
   let mapActors = actors.map((actor, index) => {
-    return (<img className={style.actorsImage} src={actor} key={actor} alt={`Actor # ${index}`} /> )
+    return (<img className={style.actorsImage} src={actor} key={actor} alt={`Actor # ${index}`} />)
   })
 
   return (
-    <div className={style.actorsListContainer}>
+    <div className={style.margin_10px}>
+       <div className={style.actorsListContainer}>
       {mapActors}
     </div>
+    </div>
+   
   )
 }
 

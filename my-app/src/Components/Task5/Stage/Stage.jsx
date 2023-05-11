@@ -123,17 +123,20 @@ function Stage({ stage, actorsCount }) {
 
   return (
     <div className={style.stageContainer}>
+      <Flex justify="center">
         <h2>Actors</h2>
-       <ActorsList actorsCount={actorsCount}></ActorsList>
-        <Flex gap="20px" justify="center">
-          <VerticalLine top={verticalLamp.top} display={verticalLamp.display}></VerticalLine>
-          <Flex direction="column" gap="0px">
-            {mapStage}
-            <HorizontalLine left={horizontalLamp.left} display={horizontalLamp.display}></HorizontalLine>
-          </Flex>
+      </Flex>
+
+      <ActorsList actorsCount={actorsCount}></ActorsList>
+      <Flex gap="20px" justify="center">
+        <VerticalLine top={verticalLamp.top} display={verticalLamp.display}></VerticalLine>
+        <Flex direction="column" gap="0px">
+          {mapStage}
+          <HorizontalLine left={horizontalLamp.left} display={horizontalLamp.display}></HorizontalLine>
         </Flex>
-       
-       
+      </Flex>
+
+
     </div>
   )
 }
