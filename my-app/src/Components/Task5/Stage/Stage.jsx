@@ -4,11 +4,12 @@ import Flex from '../additional/Flex';
 import Square from './Square';
 import VerticalLamp from '../additional/VerticalLamp';
 import HorizontalLamp from '../additional/HorizontalLamp';
+import ActorsList from './ActorsList';
 
 
 
 
-function Stage({ stage }) {
+function Stage({ stage, actorsCount }) {
 
   const [newActor, setNewActor] = useState([])
   const [checkedActor, setCheckedActor] = useState({})
@@ -39,25 +40,25 @@ function Stage({ stage }) {
     if (newActor.length > 0) {
       const newColumns = { ...columns };
       const newRows = { ...rows };
-  
+
       newActor.forEach((actor) => {
         newColumns[actor.column]++;
         newRows[actor.line]++;
       });
-  
+
       setColumns(newColumns);
       setRows(newRows);
     }
   }, [newActor]);
-  
+
   useEffect(() => {
     compareRows(rows);
   }, [rows]);
-  
+
   useEffect(() => {
     compareColumns(columns);
   }, [columns]);
-  
+
 
 
   useEffect(() => {
@@ -122,14 +123,17 @@ function Stage({ stage }) {
 
   return (
     <div className={style.stageContainer}>
-      <Flex gap="20px">
-        <VerticalLine top={verticalLamp.top} display={verticalLamp.display}></VerticalLine>
-        <Flex direction="column" gap="0px">
-          {mapStage}
-          <HorizontalLine left={horizontalLamp.left} display={horizontalLamp.display}></HorizontalLine>
+        <h2>Actors</h2>
+       <ActorsList actorsCount={actorsCount}></ActorsList>
+        <Flex gap="20px" justify="center">
+          <VerticalLine top={verticalLamp.top} display={verticalLamp.display}></VerticalLine>
+          <Flex direction="column" gap="0px">
+            {mapStage}
+            <HorizontalLine left={horizontalLamp.left} display={horizontalLamp.display}></HorizontalLine>
+          </Flex>
         </Flex>
-      </Flex>
-
+       
+       
     </div>
   )
 }

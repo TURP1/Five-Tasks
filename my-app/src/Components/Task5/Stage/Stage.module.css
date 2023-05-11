@@ -1,20 +1,34 @@
-.stageContainer{
-margin: 40px;
+.stageContainer {
+  margin: 40px;
 }
-.square{
+
+.square {
   width: 200px;
   height: 200px;
   border: black 2px solid;
 }
 
-.vertical{
+.vertical {
   width: 10px;
   background-color: black;
   height: calc(100% - 110px);
 }
 
-.horizontal{
+.horizontal {
   height: 10px;
   margin-top: 20px;
   background-color: black;
 }
+
+.actorsListContainer{
+  overflow-x: scroll;
+  margin: 30px auto;
+  height: 250px;
+  white-space: nowrap;
+}
+
+.actorsImage {
+  width: 200px;
+  height: 200px;
+}
+

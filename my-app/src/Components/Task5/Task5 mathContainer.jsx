@@ -14,7 +14,10 @@ function FifthTaskMath() {
         setPerformance(true)
     }
 
-    return <FifthTask startPerformance={startPerformance} performance={performance} stage={stage}></FifthTask>
+    return <FifthTask
+        startPerformance={startPerformance} performance={performance}
+        stage={stage} actorsCount={actors}>
+    </FifthTask>
 
 }
 
