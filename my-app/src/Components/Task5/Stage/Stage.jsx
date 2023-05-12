@@ -5,6 +5,7 @@ import Square from './Square';
 import VerticalLamp from '../additional/VerticalLamp';
 import HorizontalLamp from '../additional/HorizontalLamp';
 import ActorsList from './ActorsList';
+import ModalActors from './ModalActors';
 
 
 
@@ -18,6 +19,8 @@ function Stage({ stage, actorsCount }) {
   const [horizontalLamp, setHorizontalLamp] = useState({ left: "0px", display: "block" })
   const [columns, setColumns] = useState({ 0: 0, 1: 0, 2: 0, 3: 0 })
   const [rows, setRows] = useState({ 0: 0, 1: 0, 2: 0 })
+  const [modal, setModal] = useState(false);
+  const [modalPosition, setModalPosition] = useState({});
 
 
 
@@ -98,7 +101,9 @@ function Stage({ stage, actorsCount }) {
 
   const mapWidth = (heightIndex) => {
     return widthArr.map((_, index) => {
-      return <Square key={index} changeStageSituation={changeStageSituation} heightIndex={heightIndex} widthIndex={index} />;
+      return <Square
+        setModal={setModal} key={index} changeStageSituation={changeStageSituation}
+        heightIndex={heightIndex} widthIndex={index} setModalPosition={setModalPosition}/>;
     });
   };
 
@@ -131,6 +136,8 @@ function Stage({ stage, actorsCount }) {
       <Flex gap="20px" justify="center">
         <VerticalLine top={verticalLamp.top} display={verticalLamp.display}></VerticalLine>
         <Flex direction="column" gap="0px">
+          {modal && 
+          <ModalActors top={modalPosition.top} left={modalPosition.left} clientTop={modalPosition.clientTop}></ModalActors>}
           {mapStage}
           <HorizontalLine left={horizontalLamp.left} display={horizontalLamp.display}></HorizontalLine>
         </Flex>
