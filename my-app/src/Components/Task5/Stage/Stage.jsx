@@ -137,7 +137,9 @@ function Stage({ stage, actorsCount }) {
         <VerticalLine top={verticalLamp.top} display={verticalLamp.display}></VerticalLine>
         <Flex direction="column" gap="0px">
           {modal && 
-          <ModalActors top={modalPosition.top} left={modalPosition.left} clientTop={modalPosition.clientTop}></ModalActors>}
+          <ModalActors
+           top={modalPosition.top} left={modalPosition.left} clientTop={modalPosition.clientTop}
+           containerWidth={modalPosition.containerWidth} containerHeight={modalPosition.containerHeight}></ModalActors>}
           {mapStage}
           <HorizontalLine left={horizontalLamp.left} display={horizontalLamp.display}></HorizontalLine>
         </Flex>

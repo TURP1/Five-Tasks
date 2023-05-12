@@ -11,11 +11,13 @@ function Square({ heightIndex, widthIndex, changeStageSituation, setModal, setMo
 
   let chooseHandler = (e) => {
     console.log(e);
-    console.log(e.clientY);
+    console.log(e.target.parentElement.parentElement.clientWidth);
     setModalPosition(
       { left: e.pageX,
          top: e.pageY,
          clientTop: e.clientY,
+         containerWidth: e.target.parentElement.parentElement.clientWidth,
+         containerHeight: e.target.parentElement.parentElement.clientHeight
          }
       )
 

@@ -6,21 +6,21 @@ import styled from 'styled-components';
 
 const StyledModal = styled.div`
 position: absolute;
-width: 30%;
+width: ${props => props.containerWidth - 200 + "px"};
 top: ${props => {
     if (props.clientTop < window.innerHeight / 2) {
       return props.top + "px"
     }
-    else return props.top - 500 + "px"
+    else return props.top - props.containerHeight + 300 + "px"
   }
   };
 left: ${props => {
     if (props.left < window.innerWidth / 2) {
       return props.left + "px"
     }
-    else return props.left - 430 + "px"
+    else return props.left - props.containerWidth + 200 + "px"
   }};
-height: 500px;
+height:${props => props.containerHeight - 300 + "px"} ;
 border: 2px solid black;
 border-radius: 10px;
 background-color: white;
