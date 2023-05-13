@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './Stage.module.css'
 import styled from 'styled-components';
+import Flex from '../additional/Flex';
 
 //clientTop
 
@@ -30,10 +31,18 @@ z-index: 2;
 function ModalActors(props) {
 
 
+  let mapActors = props.actorsList.map((actor, index) => {
+    return (<img className={style.actorsModalImage} src={actor} key={actor} alt={`Actor # ${index}`} />)
+  })
   console.log("modal");
   return (
     <StyledModal {...props}>
-      MODAL
+
+        <Flex justify="center" className={style.modalContainer}>
+          {mapActors}
+        </Flex>
+
+
     </StyledModal>
 
   )

@@ -10,7 +10,8 @@ import ModalActors from './ModalActors';
 
 
 
-function Stage({ stage, actorsCount }) {
+
+function Stage({ stage, actorsList }) {
 
   const [newActor, setNewActor] = useState([])
   const [checkedActor, setCheckedActor] = useState({})
@@ -22,6 +23,12 @@ function Stage({ stage, actorsCount }) {
   const [modal, setModal] = useState(false);
   const [modalPosition, setModalPosition] = useState({});
 
+
+  function hideModalWindow(e) {
+    if (e.target.id === "hide") {
+      setModal(false)
+    }
+  }
 
 
   useEffect(() => {
@@ -103,7 +110,7 @@ function Stage({ stage, actorsCount }) {
     return widthArr.map((_, index) => {
       return <Square
         setModal={setModal} key={index} changeStageSituation={changeStageSituation}
-        heightIndex={heightIndex} widthIndex={index} setModalPosition={setModalPosition}/>;
+        heightIndex={heightIndex} widthIndex={index} setModalPosition={setModalPosition} />;
     });
   };
 
@@ -127,19 +134,21 @@ function Stage({ stage, actorsCount }) {
   }
 
   return (
-    <div className={style.stageContainer}>
+    <div className={style.stageContainer} >
       <Flex justify="center">
         <h2>Actors</h2>
       </Flex>
 
-      <ActorsList actorsCount={actorsCount}></ActorsList>
-      <Flex gap="20px" justify="center">
+      <ActorsList actorsList={actorsList} ></ActorsList>
+      <Flex gap="20px" justify="center" onClick={(e)=>hideModalWindow(e)} id="hide">
         <VerticalLine top={verticalLamp.top} display={verticalLamp.display}></VerticalLine>
-        <Flex direction="column" gap="0px">
-          {modal && 
-          <ModalActors
-           top={modalPosition.top} left={modalPosition.left} clientTop={modalPosition.clientTop}
-           containerWidth={modalPosition.containerWidth} containerHeight={modalPosition.containerHeight}></ModalActors>}
+        <Flex direction="column" gap="0px" >
+          {modal &&
+            <ModalActors
+              top={modalPosition.top} left={modalPosition.left} clientTop={modalPosition.clientTop}
+              containerWidth={modalPosition.containerWidth} containerHeight={modalPosition.containerHeight}
+              actorsList={actorsList}>
+            </ModalActors>}
           {mapStage}
           <HorizontalLine left={horizontalLamp.left} display={horizontalLamp.display}></HorizontalLine>
         </Flex>
