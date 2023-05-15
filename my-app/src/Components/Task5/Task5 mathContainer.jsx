@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import FifthTask from './Task5';
 
 import firstActor from "../../assets/task5/1.png"
@@ -13,23 +13,43 @@ import eighthActor from "../../assets/task5/8.png"
 
 function FifthTaskMath() {
     const [stage, setStage] = useState({ width: 4, height: 3 });
-    const [actors, setActors] = useState(0);
     const [performance, setPerformance] = useState(true);
     const [actorsList, setActorsList] = useState(
-        [firstActor, secondActor, thirdActor, fourthActor, fifthActor, sixthActor, seventhActor, eighthActor]
+        [
+            { positionIndex: 1, img: firstActor },
+            { positionIndex: 2, img: secondActor },
+            { positionIndex: 3, img: thirdActor },
+            { positionIndex: 4, img: fourthActor },
+            { positionIndex: 5, img: fifthActor },
+            { positionIndex: 6, img: sixthActor },
+            { positionIndex: 7, img: seventhActor },
+            { positionIndex: 8, img: eighthActor }
+        ]
     )
+
+
+    function chooseActor(key) {
+        let newActor = actorsList.filter(actor => {
+            return actor.positionIndex === key
+        })
+        let newActorList = actorsList.filter(actor => {
+            return actor.positionIndex !== key
+        })
+        setActorsList(newActorList)
+    }
+
+
 
     function startPerformance(data) {
         setStage({ width: +data.width, height: +data.height });
-        setActors(+data.actors);
-        let newActorsArray = actorsList.slice(0, 8) //actorsCount
-        setActors(newActorsArray)
+        let newActorsArray = actorsList.slice(0, Number(data.actors)) //actorsCount
+        setActorsList(newActorsArray)
         setPerformance(true)
     }
 
     return <FifthTask
         startPerformance={startPerformance} performance={performance}
-        stage={stage} actorsList={actorsList}>
+        stage={stage} actorsList={actorsList} chooseActor={chooseActor}>
     </FifthTask>
 
 }

@@ -7,11 +7,12 @@ import { useState } from 'react';
 
 function Square({ heightIndex, widthIndex, changeStageSituation, setModal, setModalPosition }) {
   const [choose, setChoose] = useState(false)
+  // const [actor, setActor] = useState(actor)
 
 
   let chooseHandler = (e) => {
     console.log(e);
-    console.log(e.target.parentElement.parentElement.clientWidth);
+    
     setModalPosition(
       { left: e.pageX,
          top: e.pageY,
@@ -28,6 +29,7 @@ function Square({ heightIndex, widthIndex, changeStageSituation, setModal, setMo
 
   return (
     <div className={style.square} onClick={chooseHandler}>
+      {/* {actor && <img src={actor.image}></img>} */}
       {`row - ${heightIndex} , column - ${widthIndex}, choose - ${choose}`}
     </div>
   )

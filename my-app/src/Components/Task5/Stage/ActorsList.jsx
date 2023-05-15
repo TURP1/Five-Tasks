@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import style from './Stage.module.css'
-import { useState } from 'react';
+
 
 
 
@@ -9,19 +9,17 @@ import { useState } from 'react';
 function ActorsList({ actorsList }) {
 
 
-
-
-  let mapActors = actorsList.map((actor, index) => {
-    return (<img className={style.actorsImage} src={actor} key={actor} alt={`Actor # ${index}`} />)
-  })
+  let mapActors = actorsList.map((actor) => {
+      return (<img className={style.actorsImage} src={actor.img} key={actor.positionIndex} alt={String(actor.positionIndex)} />)
+    })
 
   return (
     <div className={style.margin_10px}>
-       <div className={style.actorsListContainer}>
-      {mapActors}
+      <div className={style.actorsListContainer}>
+        {actorsList.length > 0 && mapActors}
+      </div>
     </div>
-    </div>
-   
+
   )
 }
 

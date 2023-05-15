@@ -11,12 +11,12 @@ import ModalActors from './ModalActors';
 
 
 
-function Stage({ stage, actorsList }) {
+function Stage({ stage, actorsList, chooseActor }) {
 
   const [newActor, setNewActor] = useState([])
   const [checkedActor, setCheckedActor] = useState({})
   const [stageObj, setStageObj] = useState([])
-  const [verticalLamp, setVerticalLamp] = useState({ top: "90px", display: "block" })
+  const [verticalLamp, setVerticalLamp] = useState({ top: "0px", display: "block" })
   const [horizontalLamp, setHorizontalLamp] = useState({ left: "0px", display: "block" })
   const [columns, setColumns] = useState({ 0: 0, 1: 0, 2: 0, 3: 0 })
   const [rows, setRows] = useState({ 0: 0, 1: 0, 2: 0 })
@@ -41,10 +41,7 @@ function Stage({ stage, actorsList }) {
     setStageObj(newStageObj);
   }, [stage]);
 
-
   // { column: 0, line: 2, checked: false }
-
-
 
   useEffect(() => {
     if (newActor.length > 0) {
@@ -147,7 +144,7 @@ function Stage({ stage, actorsList }) {
             <ModalActors
               top={modalPosition.top} left={modalPosition.left} clientTop={modalPosition.clientTop}
               containerWidth={modalPosition.containerWidth} containerHeight={modalPosition.containerHeight}
-              actorsList={actorsList}>
+              actorsList={actorsList} chooseActor={chooseActor}>
             </ModalActors>}
           {mapStage}
           <HorizontalLine left={horizontalLamp.left} display={horizontalLamp.display}></HorizontalLine>

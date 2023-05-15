@@ -30,17 +30,20 @@ z-index: 2;
 
 function ModalActors(props) {
 
+  let modalHandler = (key) => {
+    props.chooseActor(key)
+  }
 
-  let mapActors = props.actorsList.map((actor, index) => {
-    return (<img className={style.actorsModalImage} src={actor} key={actor} alt={`Actor # ${index}`} />)
+  let mapActors = props.actorsList.map((actor) => {
+    return (<img className={style.actorsModalImage} src={actor.img} key={actor.positionIndex} onClick={() => modalHandler(actor.positionIndex)} alt={String(actor.positionIndex)} />)
   })
-  console.log("modal");
+
   return (
     <StyledModal {...props}>
 
-        <Flex justify="center" className={style.modalContainer}>
-          {mapActors}
-        </Flex>
+      <Flex justify="center" className={style.modalContainer}>
+        {mapActors}
+      </Flex>
 
 
     </StyledModal>

@@ -4,7 +4,7 @@ import Stage from './Stage/Stage';
 
 
 
-function FifthTask({ startPerformance, performance, stage, actorsList }) {
+function FifthTask({ startPerformance, performance, stage, actorsList, chooseActor }) {
 
 
   return (
@@ -28,7 +28,7 @@ function FifthTask({ startPerformance, performance, stage, actorsList }) {
       </div>
       <div>
         {!performance && <Register startPerformance={startPerformance}></Register>}
-        {performance && <Stage stage={stage} actorsList={actorsList}></Stage>}
+        {performance && <Stage stage={stage} actorsList={actorsList} chooseActor={chooseActor}></Stage>}
       </div>
 
     </div>
