@@ -13,6 +13,7 @@ import eighthActor from "../../assets/task5/8.png"
 
 function FifthTaskMath() {
     const [stage, setStage] = useState({ width: 4, height: 3 });
+    const [indexes, setIndexes] = useState({});
     const [performance, setPerformance] = useState(true);
     const [actorsList, setActorsList] = useState(
         [
@@ -28,7 +29,7 @@ function FifthTaskMath() {
     )
 
 
-    function chooseActor(key, target, setModal) {
+    function chooseActor(key, target, setModal, changeStageSituation) {
         let newActor = actorsList.filter(actor => {
             return actor.positionIndex === key
         })
@@ -44,6 +45,7 @@ function FifthTaskMath() {
         })
         setActorsList(newActorList)
         setModal(false)
+        changeStageSituation({ line: indexes.heightIndex, column: indexes.widthIndex, checked: true })
     }
 
 
@@ -56,8 +58,13 @@ function FifthTaskMath() {
     }
 
     return <FifthTask
-        startPerformance={startPerformance} performance={performance}
-        stage={stage} actorsList={actorsList} chooseActor={chooseActor}>
+        startPerformance={startPerformance}
+         performance={performance}
+        stage={stage} 
+        actorsList={actorsList} 
+        chooseActor={chooseActor}
+        setIndexes={setIndexes}
+        >
     </FifthTask>
 
 }

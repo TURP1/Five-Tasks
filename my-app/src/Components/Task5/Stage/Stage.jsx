@@ -11,7 +11,7 @@ import ModalActors from './ModalActors';
 
 
 
-function Stage({ stage, actorsList, chooseActor }) {
+function Stage({ stage, actorsList, chooseActor, setIndexes }) {
 
   const [newActor, setNewActor] = useState([])
   const [checkedActor, setCheckedActor] = useState({})
@@ -110,12 +110,12 @@ function Stage({ stage, actorsList, chooseActor }) {
       return <Square
         setModal={setModal}
         key={index}
-        changeStageSituation={changeStageSituation}
         heightIndex={heightIndex}
         widthIndex={index}
         setModalPosition={setModalPosition}
         setChooseSquare={setChooseSquare}
         chooseSquare={chooseSquare}
+        setIndexes={setIndexes}
       />;
     });
   };
@@ -162,6 +162,7 @@ function Stage({ stage, actorsList, chooseActor }) {
               chooseActor={chooseActor}
               target={chooseSquare}
               setModal={setModal}
+              changeStageSituation={changeStageSituation}
             >
             </ModalActors>}
           {mapStage}

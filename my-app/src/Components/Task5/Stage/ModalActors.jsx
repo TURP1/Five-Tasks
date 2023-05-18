@@ -29,8 +29,9 @@ z-index: 2;
 `
 
 function ModalActors(props) {
+  // heightIndex, widthIndex, changeStageSituation
   let modalHandler = (key) => {
-    props.chooseActor(key, props.target, props.setModal)
+    props.chooseActor(key, props.target, props.setModal, props.changeStageSituation)
   }
 
   let mapActors = props.actorsList.map((actor) => {
