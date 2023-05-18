@@ -22,11 +22,12 @@ function Stage({ stage, actorsList, chooseActor }) {
   const [rows, setRows] = useState({ 0: 0, 1: 0, 2: 0 })
   const [modal, setModal] = useState(false);
   const [modalPosition, setModalPosition] = useState({});
-
+  const [chooseSquare, setChooseSquare] = useState({})
 
   function hideModalWindow(e) {
     if (e.target.id === "hide") {
       setModal(false)
+      setChooseSquare({})
     }
   }
 
@@ -103,11 +104,19 @@ function Stage({ stage, actorsList, chooseActor }) {
   const widthArr = createArray(stage.width);
   const heightArr = createArray(stage.height);
 
+
   const mapWidth = (heightIndex) => {
     return widthArr.map((_, index) => {
       return <Square
-        setModal={setModal} key={index} changeStageSituation={changeStageSituation}
-        heightIndex={heightIndex} widthIndex={index} setModalPosition={setModalPosition} />;
+        setModal={setModal}
+        key={index}
+        changeStageSituation={changeStageSituation}
+        heightIndex={heightIndex}
+        widthIndex={index}
+        setModalPosition={setModalPosition}
+        setChooseSquare={setChooseSquare}
+        chooseSquare={chooseSquare}
+      />;
     });
   };
 
@@ -135,16 +144,24 @@ function Stage({ stage, actorsList, chooseActor }) {
       <Flex justify="center">
         <h2>Actors</h2>
       </Flex>
+      {actorsList.length > 0 &&
+        <ActorsList actorsList={actorsList} ></ActorsList>
+      }
 
-      <ActorsList actorsList={actorsList} ></ActorsList>
-      <Flex gap="20px" justify="center" onClick={(e)=>hideModalWindow(e)} id="hide">
+      <Flex gap="20px" justify="center" onClick={(e) => hideModalWindow(e)} id="hide">
         <VerticalLine top={verticalLamp.top} display={verticalLamp.display}></VerticalLine>
         <Flex direction="column" gap="0px" >
-          {modal &&
+          {modal && actorsList.length > 0 &&
             <ModalActors
-              top={modalPosition.top} left={modalPosition.left} clientTop={modalPosition.clientTop}
-              containerWidth={modalPosition.containerWidth} containerHeight={modalPosition.containerHeight}
-              actorsList={actorsList} chooseActor={chooseActor}>
+              top={modalPosition.top}
+              left={modalPosition.left}
+              clientTop={modalPosition.clientTop}
+              containerWidth={modalPosition.containerWidth}
+              containerHeight={modalPosition.containerHeight}
+              actorsList={actorsList}
+              chooseActor={chooseActor}
+              target={chooseSquare}
+            >
             </ModalActors>}
           {mapStage}
           <HorizontalLine left={horizontalLamp.left} display={horizontalLamp.display}></HorizontalLine>

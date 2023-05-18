@@ -5,13 +5,13 @@ import { useState } from 'react';
 
 
 
-function Square({ heightIndex, widthIndex, changeStageSituation, setModal, setModalPosition }) {
+function Square({ heightIndex, widthIndex, changeStageSituation, setModal, setModalPosition, setChooseSquare, chooseSquare }) {
   const [choose, setChoose] = useState(false)
   // const [actor, setActor] = useState(actor)
 
 
   let chooseHandler = (e) => {
-    console.log(e);
+
     
     setModalPosition(
       { left: e.pageX,
@@ -21,14 +21,15 @@ function Square({ heightIndex, widthIndex, changeStageSituation, setModal, setMo
          containerHeight: e.target.parentElement.parentElement.clientHeight
          }
       )
-
+    setChooseSquare({target: e.target})
     setModal(true)
-    setChoose(!choose)
-    changeStageSituation({ line: heightIndex, column: widthIndex, checked: !choose })
+    // setChoose(!choose)
+    // changeStageSituation({ line: heightIndex, column: widthIndex, checked: !choose })
   }
 
   return (
     <div className={style.square} onClick={chooseHandler}>
+      {chooseSquare.img && <img src={chooseSquare.img}></img> }
       {/* {actor && <img src={actor.image}></img>} */}
       {`row - ${heightIndex} , column - ${widthIndex}, choose - ${choose}`}
     </div>

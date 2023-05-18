@@ -28,10 +28,17 @@ function FifthTaskMath() {
     )
 
 
-    function chooseActor(key) {
+    function chooseActor(key, target) {
         let newActor = actorsList.filter(actor => {
             return actor.positionIndex === key
         })
+
+        target.target.innerHTML = `
+        <div style="display: flex; justify-content: center; align-items: center; height: 200px">
+        <img style="width: 150px; height: 150px; z-index:-1;"  src=${newActor[0].img}></img>
+        </div>`
+       
+        console.log(target);
         let newActorList = actorsList.filter(actor => {
             return actor.positionIndex !== key
         })
