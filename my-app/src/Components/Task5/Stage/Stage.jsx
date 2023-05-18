@@ -161,6 +161,7 @@ function Stage({ stage, actorsList, chooseActor }) {
               actorsList={actorsList}
               chooseActor={chooseActor}
               target={chooseSquare}
+              setModal={setModal}
             >
             </ModalActors>}
           {mapStage}

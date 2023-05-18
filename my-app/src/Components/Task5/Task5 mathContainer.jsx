@@ -28,7 +28,7 @@ function FifthTaskMath() {
     )
 
 
-    function chooseActor(key, target) {
+    function chooseActor(key, target, setModal) {
         let newActor = actorsList.filter(actor => {
             return actor.positionIndex === key
         })
@@ -43,6 +43,7 @@ function FifthTaskMath() {
             return actor.positionIndex !== key
         })
         setActorsList(newActorList)
+        setModal(false)
     }
 
 
