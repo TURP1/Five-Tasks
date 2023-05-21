@@ -15,6 +15,7 @@ const StyledVerticalLight = styled.div`
   bottom: -85px;
   left: 30px;
   position: absolute;
+  pointer-events: none;
 `;
 
 
