@@ -16,8 +16,16 @@ function Stage({ stage, actorsList, chooseActor, setIndexes }) {
   const [newActor, setNewActor] = useState([])
   const [checkedActor, setCheckedActor] = useState({})
   const [stageObj, setStageObj] = useState([])
-  const [verticalLamp, setVerticalLamp] = useState({ top: "0px", display: "block" })
-  const [horizontalLamp, setHorizontalLamp] = useState({ left: "0px", display: "block" })
+  const [verticalLamp, setVerticalLamp] = useState({
+    top: "0px",
+    display: "block",
+    stageWidth: "0px"
+  })
+  const [horizontalLamp, setHorizontalLamp] = useState({
+    left: "0px",
+    display: "block",
+    stageHeight: "0px"
+  })
   const [columns, setColumns] = useState({ 0: 0, 1: 0, 2: 0, 3: 0 })
   const [rows, setRows] = useState({ 0: 0, 1: 0, 2: 0 })
   const [modal, setModal] = useState(false);
@@ -42,8 +50,6 @@ function Stage({ stage, actorsList, chooseActor, setIndexes }) {
     setStageObj(newStageObj);
   }, [stage]);
 
-  // { column: 0, line: 2, checked: false }
-
   useEffect(() => {
     if (newActor.length > 0) {
       const newColumns = { ...columns };
@@ -59,18 +65,17 @@ function Stage({ stage, actorsList, chooseActor, setIndexes }) {
     }
   }, [newActor]);
 
-  useEffect(() => {
-    compareRows(rows);
-  }, [rows]);
 
   useEffect(() => {
     compareColumns(columns);
-  }, [columns]);
+    compareRows(rows);
+  }, [columns, rows]);
+
 
 
 
   useEffect(() => {
-    setNewActor(checkedActor.column !== undefined ? [checkedActor] : []); // check if newClickedActor has a truthy value before setting newActor state variable
+    setNewActor(checkedActor.column !== undefined ? [checkedActor] : []);
     compareColumns(columns);
     compareRows(rows)
   }, [checkedActor]);
@@ -80,9 +85,26 @@ function Stage({ stage, actorsList, chooseActor, setIndexes }) {
     const topPositions = ["90px", "290px", "490px"];
 
     if (rows[biggest] === 0) {
-      setVerticalLamp({ top: "90px", display: "none" });
+      setVerticalLamp({ top: "0px", display: "none" });
     } else {
-      setVerticalLamp({ top: topPositions[biggest], display: "block" });
+      let stageWidth;
+      switch (stage.width) {
+        case 1:
+          stageWidth = "250px";
+          break;
+        case 2:
+          stageWidth = "450px";
+          break;
+        case 3:
+          stageWidth = "650px";
+          break;
+        case 4:
+          stageWidth = "855px";
+          break;
+        default:
+          break;
+      }
+      setVerticalLamp({ top: topPositions[biggest], display: "block", stageWidth });
     }
   }
 
@@ -93,7 +115,21 @@ function Stage({ stage, actorsList, chooseActor, setIndexes }) {
     if (columns[biggest] === 0) {
       setHorizontalLamp({ left: "0px", display: "none" });
     } else {
-      setHorizontalLamp({ left: leftPositions[biggest], display: "block" });
+      let stageHeight;
+      switch (stage.height) {
+        case 1:
+          stageHeight = "250px";
+          break;
+        case 2:
+          stageHeight = "450px";
+          break;
+        case 3:
+          stageHeight = "650px";
+          break;
+        default:
+          break;
+      }
+      setHorizontalLamp({ left: leftPositions[biggest], display: "block", stageHeight })
     }
   }
 
@@ -149,7 +185,7 @@ function Stage({ stage, actorsList, chooseActor, setIndexes }) {
       }
 
       <Flex gap="20px" justify="center" onClick={(e) => hideModalWindow(e)} id="hide">
-        <VerticalLine top={verticalLamp.top} display={verticalLamp.display}></VerticalLine>
+        <VerticalLine top={verticalLamp.top} display={verticalLamp.display} stageWidth={verticalLamp.stageWidth} ></VerticalLine>
         <Flex direction="column" gap="0px" >
           {modal && actorsList.length > 0 &&
             <ModalActors
@@ -166,7 +202,11 @@ function Stage({ stage, actorsList, chooseActor, setIndexes }) {
             >
             </ModalActors>}
           {mapStage}
-          <HorizontalLine left={horizontalLamp.left} display={horizontalLamp.display}></HorizontalLine>
+          <HorizontalLine
+            left={horizontalLamp.left}
+            display={horizontalLamp.display}
+            stageHeight={horizontalLamp.stageHeight}
+          ></HorizontalLine>
         </Flex>
       </Flex>
 
@@ -177,21 +217,28 @@ function Stage({ stage, actorsList, chooseActor, setIndexes }) {
 
 export default Stage;
 
-function VerticalLine({ top, display }) {
+function VerticalLine({ top, display, stageWidth }) {
   return (
     <div>
-      <VerticalLamp top={top} display={display}></VerticalLamp>
+      <VerticalLamp
+        top={top}
+        display={display}
+        stageWidth={stageWidth}
+      ></VerticalLamp>
       <div className={style.vertical}></div>
-
     </div>
 
   );
 }
 
-function HorizontalLine({ left, display }) {
+function HorizontalLine({ left, display, stageHeight }) {
   return (
     <div>
-      <HorizontalLamp left={left} display={display}></HorizontalLamp>
+      <HorizontalLamp
+        left={left}
+        display={display}
+        stageHeight={stageHeight}
+      ></HorizontalLamp>
       <div className={style.horizontal}></div>
     </div>
   );

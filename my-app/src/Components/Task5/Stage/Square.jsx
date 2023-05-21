@@ -6,9 +6,6 @@ import { useState } from 'react';
 
 
 function Square({ heightIndex, widthIndex, setModal, setModalPosition, setChooseSquare, chooseSquare, setIndexes }) {
-  const [choose, setChoose] = useState(false)
-
-
 
   let chooseHandler = (e) => {
 
@@ -25,13 +22,13 @@ function Square({ heightIndex, widthIndex, setModal, setModalPosition, setChoose
     setChooseSquare({ target: e.target })
     setModal(true)
     setIndexes({ heightIndex: heightIndex, widthIndex: widthIndex })
-    setChoose(!choose)
+
   }
 
   return (
     <div className={style.square} onClick={chooseHandler}>
       {chooseSquare.img && <img src={chooseSquare.img}></img>}
-      {`row - ${heightIndex} , column - ${widthIndex}, choose - ${choose}`}
+
     </div>
   )
 }

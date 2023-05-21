@@ -9,9 +9,19 @@ const StyledHorizontalLamp = styled.div`
   display: ${props => props.display || 'none'};
   background-color: black;
 `
+const StyledHorizontalLight = styled.div`
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: ${props => props.stageHeight ? props.stageHeight + " solid rgba(220, 212, 130, 0.605)" : '600px solid rgba(220, 212, 130, 0.605)'};
+  bottom: 30px;
+  left: -85px;
+  position: absolute;
+`;
 
 function HorizontalLamp(props) {
-    return <StyledHorizontalLamp {...props} />
+  return <StyledHorizontalLamp {...props} >
+    <StyledHorizontalLight {...props}></StyledHorizontalLight>
+  </StyledHorizontalLamp>
 }
 
 export default HorizontalLamp;

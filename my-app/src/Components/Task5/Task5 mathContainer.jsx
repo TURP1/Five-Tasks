@@ -14,7 +14,7 @@ import eighthActor from "../../assets/task5/8.png"
 function FifthTaskMath() {
     const [stage, setStage] = useState({ width: 4, height: 3 });
     const [indexes, setIndexes] = useState({});
-    const [performance, setPerformance] = useState(true);
+    const [performance, setPerformance] = useState(false);
     const [actorsList, setActorsList] = useState(
         [
             { positionIndex: 1, img: firstActor },
@@ -39,7 +39,6 @@ function FifthTaskMath() {
         <img style="width: 150px; height: 150px; z-index:-1;"  src=${newActor[0].img}></img>
         </div>`
        
-        console.log(target);
         let newActorList = actorsList.filter(actor => {
             return actor.positionIndex !== key
         })

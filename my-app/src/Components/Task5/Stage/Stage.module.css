@@ -11,6 +11,7 @@
 .square:hover{
   background-color: rgba(95, 151, 247, 0.605);
   border: rgb(95, 151, 247) 2px solid;
+  
 }
 
 .vertical {
