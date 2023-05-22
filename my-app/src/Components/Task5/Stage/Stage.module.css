@@ -2,17 +2,29 @@
   margin-bottom: 100px;
 }
 
-.square {
+.squareWithHover {
   width: 200px;
   height: 200px;
   border: black 2px solid;
 }
 
-.square:hover:not(.hasImage){
+.squareWithHover:hover {
   background-color: rgba(95, 151, 247, 0.605);
   border: rgb(95, 151, 247) 2px solid;
-
 }
+
+.squareWithoutHover {
+  width: 200px;
+  height: 200px;
+  border: black 2px solid;
+}
+
+.squareWithoutHover:hover {
+  background-color: transparent;
+  border: black 2px solid;
+}
+
+
 
 .vertical {
   width: 10px;
@@ -40,7 +52,7 @@
   padding: 0 5px;
 }
 
-.actorsModalImage{
+.actorsModalImage {
   width: 175px;
   height: 175px;
   padding: 3px 5px;
@@ -50,7 +62,7 @@
   margin: 0 20px;
 }
 
-.modal{
+.modal {
   position: absolute;
   width: 30%;
   height: 500px;
@@ -60,7 +72,7 @@
   z-index: 2;
 }
 
-.modalContainer{
+.modalContainer {
   overflow: scroll;
   height: 100%;
 }

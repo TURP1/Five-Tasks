@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './Stage.module.css'
-import { useState } from 'react';
-
-
-
 
 function Square({ heightIndex, widthIndex, setModal, setModalPosition, setChooseSquare, chooseSquare, setIndexes }) {
 
+  const [hover, setHover] = useState(true);
+
+
   let chooseHandler = (e) => {
+    console.log(e.target);
     if (e.target.children.length) {
       return
     }
@@ -22,17 +22,19 @@ function Square({ heightIndex, widthIndex, setModal, setModalPosition, setChoose
       }
     )
     setChooseSquare({ target: e.target })
+    setHover(false)
     setModal(true)
     setIndexes({ heightIndex: heightIndex, widthIndex: widthIndex })
-
   }
 
-  return (
-    <div className={style.square} onClick={chooseHandler}>
-      {chooseSquare.img && <img src={chooseSquare.img}></img>}
+  let squareClass = hover ? style.squareWithHover : style.squareWithoutHover;
 
+  return (
+    <div className={squareClass} onClick={chooseHandler}>
+      {chooseSquare.img && <img src={chooseSquare.img} alt="Square Image" />}
     </div>
-  )
+  );
+
 }
 
 
