@@ -111,7 +111,7 @@ function FormRegister({competitorsList, orderedShirtsArrayDecrease}) {
                 <div className={s.formSizeChoosing}>
                     {mapSizes}
                 </div>
-                <button className="submitBtn" onClick={()=>handleSubmitUser(competitorsList)}>Submit Person</button>
+                <div className="submitBtn" onClick={()=>handleSubmitUser(competitorsList)}>Submit Person</div>
             </div>
         </div>
     )

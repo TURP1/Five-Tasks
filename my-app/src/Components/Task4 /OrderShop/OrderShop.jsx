@@ -88,9 +88,9 @@ function OrderShop({ orderedShirtsArray, orderedShirts }) {
                     <OrderItem size={"XXL"} missingItems={missingItems} src={XXL} handleClangingCount={handleClangingCount}></OrderItem>
                     <OrderItem size={"XXXL"} missingItems={missingItems} src={XXXL} handleClangingCount={handleClangingCount}></OrderItem>
                 </div>
-                <button onClick={onSubmit} className={style.confirmBtn} >
+                <div onClick={onSubmit} className="submitBtn" >
                     Confirm order
-                </button>
+                </div>
 
             </div>
         </div >

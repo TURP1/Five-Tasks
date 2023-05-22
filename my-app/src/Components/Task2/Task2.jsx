@@ -29,7 +29,7 @@ function SecondTask({ arrayObj, taskTwoMathFunction }) {
                 <form className={style.queryContainer} onSubmit={handleSubmit(onSubmit)}>
                     <input className={style.input} type="text" placeholder="Add Array Item" {...register("arrayValue", {})} />
                     <div className="submit">
-                        <input type="submit" />
+                        <input type="submit"  value="Add Item"/>
                     </div>
                 </form>
                 <div className={style.arrayContainer}>

@@ -35,9 +35,8 @@ function Registration(
             <div className={s.mainRegisterContainer}>
                 <div className={s.registerContainer}>
                     {!registrationForm &&
-                        <button className={style.helperContainer}
-                            onClick={addCompetitor}
-                        >Add Competitor</button>}
+                        <div className="submitBtn" onClick={addCompetitor}
+                        >Add Competitor</div>}
                     <div className={style.helperContainer}>
                         <div className={s.namingOfTheShirtList}> Shirts in store</div>
                         {mapLeftovers}

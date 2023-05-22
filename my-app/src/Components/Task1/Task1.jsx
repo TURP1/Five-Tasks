@@ -33,7 +33,7 @@ function FirstTask({ taskOneMathFunction, answer, secondNumber }) {
                             <img src={img1} alt="testImg1" />
                         </div>
                         <div className="submit">
-                            <input type="submit" />
+                            <input type="submit"  value="Check Numbers"/>
                         </div>
 
                     </div>

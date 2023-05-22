@@ -90,4 +90,10 @@ input[type=number] {
   width: 200px;
   margin: 10px auto;
   text-align: center;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.submitBtn:hover {
+  background-color: #cdd7c9;
 }
