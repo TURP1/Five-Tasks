@@ -14,7 +14,7 @@ import eighthActor from "../../assets/task5/8.png"
 function FifthTaskMath() {
     const [stage, setStage] = useState({ width: 4, height: 3 });
     const [indexes, setIndexes] = useState({});
-    const [performance, setPerformance] = useState(false);
+    const [performance, setPerformance] = useState(true);
     const [actorsList, setActorsList] = useState(
         [
             { positionIndex: 1, img: firstActor },

@@ -8,7 +8,9 @@ import { useState } from 'react';
 function Square({ heightIndex, widthIndex, setModal, setModalPosition, setChooseSquare, chooseSquare, setIndexes }) {
 
   let chooseHandler = (e) => {
-
+    if (e.target.children.length) {
+      return
+    }
 
     setModalPosition(
       {
@@ -26,7 +28,7 @@ function Square({ heightIndex, widthIndex, setModal, setModalPosition, setChoose
   }
 
   return (
-    <div className={style.square} onClick={chooseHandler}>
+    <div className={chooseSquare.img ? style.square + " " + style.hasImage : style.square} onClick={chooseHandler}>
       {chooseSquare.img && <img src={chooseSquare.img}></img>}
 
     </div>
