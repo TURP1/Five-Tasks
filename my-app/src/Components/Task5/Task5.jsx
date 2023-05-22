@@ -4,7 +4,7 @@ import Stage from './Stage/Stage';
 
 
 
-function FifthTask({ startPerformance, performance, stage, actorsList, chooseActor, setIndexes }) {
+function FifthTask({ startPerformance, performance, stage, actorsList, chooseActor, setIndexes, handleRefresh }) {
 
 
   return (
@@ -29,12 +29,19 @@ function FifthTask({ startPerformance, performance, stage, actorsList, chooseAct
       <div>
         {!performance && <Register startPerformance={startPerformance}></Register>}
         {performance &&
-          <Stage
-            stage={stage}
-            actorsList={actorsList}
-            chooseActor={chooseActor}
-            setIndexes={setIndexes}
-          ></Stage>}
+          <>
+            <Stage
+              stage={stage}
+              actorsList={actorsList}
+              chooseActor={chooseActor}
+              setIndexes={setIndexes}
+            ></Stage>
+            <div className="submitBtn" onClick={handleRefresh}>
+              New Stage
+            </div>
+          </>
+        }
+
       </div>
 
     </div>

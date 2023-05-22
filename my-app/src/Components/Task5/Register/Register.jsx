@@ -86,7 +86,7 @@ function Register({ startPerformance }) {
 
 
 
-        <input className='submitBtn' type="submit" />
+        <input className='submitBtn' value="Create Stage" type="submit" />
       </Flex>
 
 
