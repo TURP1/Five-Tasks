@@ -47,7 +47,7 @@ function ThirdTaskMath() {
 
         answer === record
             ? setProgramAnswer(<div className="right_answer">You're right, the next record is - {record} kg, with minimum cost of forces</div> )
-            : setProgramAnswer(<div className="wrong_answer">Wrong, another person picked up new record - {record} kg, with minimum cost of forces</div>)
+            : setProgramAnswer(<div className="wrong_answer">Another person set a new record by lifting {record} kg with minimal effort.</div>)
     }
 
 
