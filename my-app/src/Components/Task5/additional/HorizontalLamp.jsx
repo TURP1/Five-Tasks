@@ -14,7 +14,7 @@ const StyledHorizontalLight = styled.div`
   border-right: 100px solid transparent;
   border-top: ${props => props.stageHeight ? props.stageHeight + " solid rgba(220, 212, 130, 0.605)" : '600px solid rgba(220, 212, 130, 0.605)'};
   bottom: 30px;
-  left: -85px;
+  left: -84px;
   position: absolute;
   pointer-events: none;
 `;

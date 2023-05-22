@@ -82,7 +82,7 @@ function Stage({ stage, actorsList, chooseActor, setIndexes }) {
 
   function compareRows(rows) {
     const biggest = Object.keys(rows).reduce((a, b) => rows[a] > rows[b] ? a : b);
-    const topPositions = ["90px", "290px", "490px"];
+    const topPositions = ["88px", "292px", "495px"];
 
     if (rows[biggest] === 0) {
       setVerticalLamp({ top: "0px", display: "none" });
@@ -110,7 +110,7 @@ function Stage({ stage, actorsList, chooseActor, setIndexes }) {
 
   function compareColumns(columns) {
     const biggest = Object.keys(columns).reduce((a, b) => columns[a] > columns[b] ? a : b);
-    const leftPositions = ["90px", "290px", "490px", "690px"];
+    const leftPositions = ["85px", "290px", "493px", "697px"];
 
     if (columns[biggest] === 0) {
       setHorizontalLamp({ left: "0px", display: "none" });
