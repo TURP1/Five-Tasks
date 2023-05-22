@@ -28,7 +28,7 @@ function Square({ heightIndex, widthIndex, setModal, setModalPosition, setChoose
   }
 
   return (
-    <div className={chooseSquare.img ? style.square + " " + style.hasImage : style.square} onClick={chooseHandler}>
+    <div className={style.square} onClick={chooseHandler}>
       {chooseSquare.img && <img src={chooseSquare.img}></img>}
 
     </div>
