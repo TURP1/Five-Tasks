@@ -17,6 +17,7 @@ const StyledHorizontalLight = styled.div`
   left: -84px;
   position: absolute;
   pointer-events: none;
+  filter: blur(10px);
 `;
 
 function HorizontalLamp(props) {

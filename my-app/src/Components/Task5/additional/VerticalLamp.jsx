@@ -16,6 +16,7 @@ const StyledVerticalLight = styled.div`
   left: 30px;
   position: absolute;
   pointer-events: none;
+  filter: blur(10px);
 `;
 
 
