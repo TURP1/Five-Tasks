@@ -37,7 +37,7 @@ function Registration(
                     {!registrationForm &&
                         <div className="submitBtn" onClick={addCompetitor}
                         >Add Competitor</div>}
-                    <div className={style.helperContainer}>
+                    <div className={s.competitorsListContainer}>
                         <div className={s.namingOfTheShirtList}> Shirts in store</div>
                         {mapLeftovers}
                     </div>

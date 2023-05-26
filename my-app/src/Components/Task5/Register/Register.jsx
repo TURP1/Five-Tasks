@@ -44,7 +44,7 @@ function Register({ startPerformance }) {
           {errors.height &&
             <Flex direction="column" align="center">
               <Flex align="flex-start">
-                <div className={style.margin_top_10 + " " + style.margin_right_5}>Height</div>
+                <div className={style.margin_top_10 + " " + style.margin_right_5}>Length</div>
                 <input className={style.input} type="number" placeholder="height" {...register("height", { required: true, max: 3, min: 1 })} />
               </Flex>
               <ErrorMessage color="red">This field is required and must be between 1 and 3.</ErrorMessage>
@@ -52,7 +52,7 @@ function Register({ startPerformance }) {
           }
           {!errors.height &&
             <Flex align="flex-start">
-              <div className={style.margin_top_10 + " " + style.margin_right_5}>Height</div>
+              <div className={style.margin_top_10 + " " + style.margin_right_5}>Length</div>
               <input className={style.input} type="number" placeholder="height" {...register("height", { required: true, max: 3, min: 1 })} />
             </Flex>
           }

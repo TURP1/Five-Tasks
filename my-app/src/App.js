@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img className='App-logo' src={logo} alt='logoTest'></img>
-        <p>Agile test task</p>
+        <p>Five Interesting Tasks</p>
       </header>
       <div>
       <FirstTaskMath></FirstTaskMath>
@@ -23,6 +23,7 @@ function App() {
       <FourthTaskMath></FourthTaskMath>
       <HorizontalLine></HorizontalLine>
       <FifthTaskMath></FifthTaskMath>
+      <HorizontalLine></HorizontalLine>
       
 
       </div>

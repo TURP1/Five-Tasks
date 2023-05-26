@@ -34,6 +34,7 @@
     font-size: 25px;
 }
 
+
 .competitorsListContainer {
     min-width: 300px;
     display: flex;
@@ -43,6 +44,7 @@
     padding: 10px;
 
 }
+
 
 .competitorsListItems {
     display: flex;
