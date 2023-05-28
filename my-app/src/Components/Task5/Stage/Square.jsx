@@ -31,7 +31,7 @@ function Square({ heightIndex, widthIndex, setModal, setModalPosition, setChoose
 
   return (
     <div className={squareClass} onClick={chooseHandler}>
-      {chooseSquare.img && <img src={chooseSquare.img} alt="Square Image" />}
+      {chooseSquare.img && <img src={chooseSquare.img} alt="Square" />}
     </div>
   );
 

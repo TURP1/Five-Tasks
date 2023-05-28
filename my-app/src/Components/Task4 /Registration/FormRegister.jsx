@@ -64,6 +64,7 @@ function FormRegister({competitorsList, orderedShirtsArrayDecrease}) {
         function firstFilterArray(chooseIndex) {
             const filteredArr = chooseSize.filter((_, i) => i >= chooseIndex - 1 && i <= chooseIndex + 1);
             setChooseSize(filteredArr)
+            return filteredArr;
         }
 
     }

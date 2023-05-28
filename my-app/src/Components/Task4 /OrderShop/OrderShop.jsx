@@ -47,7 +47,7 @@ function OrderShop({ orderedShirtsArray, orderedShirts }) {
             let missingItemArray = orderedShirts.filter(item => item.quantity < 0)
             setMissingItems(missingItemArray)
         }
-    }, [orderedShirts.length])
+    }, [orderedShirts])
 
 
     function handleClangingCount(name, quantity) {
