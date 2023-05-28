@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import style from './ShippingAnimation.module.css';
 
 import store from '../../../assets/store.svg'
@@ -7,7 +7,7 @@ import car from '../../../assets/car.png'
 
 
 
-function ShippingAnimation({}) {
+function ShippingAnimation() {
  
     return (
       <div className={style.animateContainer}>
