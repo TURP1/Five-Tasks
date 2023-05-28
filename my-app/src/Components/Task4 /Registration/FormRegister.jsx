@@ -9,7 +9,7 @@ import XXL from '../../../assets/task4/XXL_choosing.png'
 import XXXL from '../../../assets/task4/XXXL_choosing.png'
 
 
-function FormRegister({competitorsList, orderedShirtsArrayDecrease}) {
+function FormRegister({ competitorsList, orderedShirtsArrayDecrease }) {
 
     let sizes = [
         {
@@ -59,6 +59,7 @@ function FormRegister({competitorsList, orderedShirtsArrayDecrease}) {
                 firstFilterArray(chooseIndex)
                 return el
             }
+            return el
         })
 
         function firstFilterArray(chooseIndex) {
@@ -80,7 +81,7 @@ function FormRegister({competitorsList, orderedShirtsArrayDecrease}) {
 
     let handleSubmitUser = (competitorsList) => {
         let submitSize = chooseSize.filter(el => el.checked === true);
-        if (nameInputRef.current.value && submitSize ) {
+        if (nameInputRef.current.value && submitSize) {
             competitorsList(nameInputRef.current.value, submitSize)
             orderedShirtsArrayDecrease(submitSize)
         }
@@ -112,7 +113,7 @@ function FormRegister({competitorsList, orderedShirtsArrayDecrease}) {
                 <div className={s.formSizeChoosing}>
                     {mapSizes}
                 </div>
-                <div className="submitBtn" onClick={()=>handleSubmitUser(competitorsList)}>Submit Person</div>
+                <div className="submitBtn" onClick={() => handleSubmitUser(competitorsList)}>Submit Person</div>
             </div>
         </div>
     )
