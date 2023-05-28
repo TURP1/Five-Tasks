@@ -58,13 +58,12 @@ If we enter incorrect data, an error will be displayed.
 We formed a stage of 3 by 3 with 5 actors.
 Now we can add actors to our sectors.
 Projectors appear when adding actors, and they are placed where the lighting is most needed.
-For example: 4-2-5-9-7.
+
 We can also create a new stage. Now I will demonstrate the program's operation on a larger stage.
 Let's create an example on a stage of 3 by 4 with 8 actors.
 At the top, we have a scroll of all the actors.
 After selecting an actor, their sector will no longer be highlighted.
 We add actors.
-Example: 5-6-11-2-9-7-10-8.
 As you can see, the maximum number of actors that could be illuminated is highlighted. The task is complete.
 
 
