@@ -63,12 +63,16 @@ function Stage({ stage, actorsList, chooseActor, setIndexes }) {
       setColumns(newColumns);
       setRows(newRows);
     }
+
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [newActor]);
 
 
   useEffect(() => {
     compareColumns(columns);
     compareRows(rows);
+
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [columns, rows]);
 
 
@@ -78,6 +82,8 @@ function Stage({ stage, actorsList, chooseActor, setIndexes }) {
     setNewActor(checkedActor.column !== undefined ? [checkedActor] : []);
     compareColumns(columns);
     compareRows(rows)
+    
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checkedActor]);
 
   function compareRows(rows) {

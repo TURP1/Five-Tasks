@@ -48,7 +48,7 @@ function FormRegister({competitorsList, orderedShirtsArrayDecrease}) {
     const nameInputRef = useRef(null);
 
     function filterAdjacentSizes(alt) {
-        chooseSize.filter(el => {
+        return chooseSize.filter(el => {
             if (el.size === alt) {
                 let chooseIndex = chooseSize.indexOf(el);
                 if (el.checked) {
